@@ -4,9 +4,10 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
-Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function(){
-    Route::get('/', [HomeController::class, 'index'])->name('home');
+Route::get('/', [HomeController::class, 'index'])->name('empty');
 
+Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function(){
+    Route::get('/demo', [HomeController::class, 'demo'])->name('home');
 
     Route::get(__('site.iletisim_link'), [HomeController::class, 'contactus'])->name('contactus');
     Route::get(__('site.referans_link'), [HomeController::class, 'reference'])->name('reference');
