@@ -50,10 +50,47 @@
                     </div>
                     <div class="col-6">
                         <div class="col-md-12 mb-3" style="border-bottom:1px dashed gray"></div>
+
+                        <h3>{{ $Detay->title }}</h3>
                         {!! $Detay->desc !!}
                         <div class="col-md-12 mt-3" style="border-bottom:1px dashed gray"></div>
                         <p>Ürün Kategori : </p>
                     </div>
+
+                    <div class="col-12 mt-100">
+                        <img src="/urun1.jpg" alt="FSR Kimya">
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="h4-blog-area pt-30 pb-50">
+        <div class="container">
+            <div class="h4-blogs">
+                <div class="row">
+                    <h3 class="mb-30 text-center">Benzer Ürünler</h3>
+                    @foreach($Product as $item)
+                        <div class="col-lg-3 col-md-6" >
+                            <div class="h4-blog-column" style="border-radius: 20px">
+                                <div class="thumb-wrapper" style="border-radius: 20px 20px 0 0 ">
+                                    <a href="{{ route('productdetail', $item->slug) }}" title="{{ $item->title }}">
+                                        <img src="{{ (!$item->getFirstMediaUrl('page')) ? '/backend/resimyok.jpg': $item->getFirstMediaUrl('page')}}">
+                                    </a>
+                                </div>
+                                <div class="blog-content text-center">
+                                    <div class="h6-headline">
+                                        <a href="{{ route('productdetail', $item->slug) }}" title="{{ $item->title }}">
+                                            <h6>{{ $item->title }}</h6>
+                                        </a>
+                                    </div>
+                                    {{ $Detay->title }}
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
                 </div>
             </div>
         </div>

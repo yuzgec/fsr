@@ -72,13 +72,16 @@ class HomeController extends Controller
             $query->where('slug', $url);
         })->first();
 
+
+        $Product =  Product::where('category',$Detay->category)->get();
+
+
         views($Detay)->cooldown(60)->record();
 
-
-        SEOMeta::setTitle($Detay->title.' | Deri Makinaları | FSR Kimya');
+        SEOMeta::setTitle($Detay->title.' | FSR Kimya');
         SEOMeta::setDescription("FSR Kimya");
         SEOMeta::setCanonical(url()->full());
-        return view('frontend.product.index', compact('Detay'));
+        return view('frontend.product.index', compact('Detay', 'Product'));
     }
 
     public function partdetail($url)
@@ -88,7 +91,7 @@ class HomeController extends Controller
         })->first();
 
         views($Detay)->cooldown(60)->record();
-        SEOMeta::setTitle($Detay->title.' | Yedek Parça | FSR Kimya');
+        SEOMeta::setTitle($Detay->title.' | FSR Kimya');
         SEOMeta::setDescription("FSR Kimya");
         SEOMeta::setCanonical(url()->full());
         return view('frontend.product.index', compact('Detay'));

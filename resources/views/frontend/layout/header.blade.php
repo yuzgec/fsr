@@ -4,18 +4,18 @@
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-sm-8">
-                    <div class="bixol-info-left">
+                   {{-- <div class="bixol-info-left">
                         <p>{{ __('site.firma') }}</p>
-                    </div>
+                    </div>--}}
                 </div>
                 <div class="col-sm-4">
                     <div class="bixol-info-social">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-linkedin"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
-                            <a rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, '/', [], true) }}">
+                            <a class="text-white" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, '/demo', [], true) }}">
                                 {{ $localeCode }}
                             </a>
                         @endforeach
