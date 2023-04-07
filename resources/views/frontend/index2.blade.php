@@ -199,7 +199,7 @@
                 <div class="col-lg-4">
                     <div class="bixol-service-middle">
                         <div class="img-wrapper">
-                            <img src="/orta-haberler.jpg"  alt="{{ __('site.firma') }}">
+                            <img src="/orta-kare.jpg"  alt="{{ __('site.firma') }}">
                             <div class="banner-content">
                                 <span class="banner-svg-1"></span>
                                 <span class="banner-svg-2"></span>
