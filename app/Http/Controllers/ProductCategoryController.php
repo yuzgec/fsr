@@ -63,17 +63,33 @@ class ProductCategoryController extends Controller
 
         $Update->update($request->except('_token', '_method', 'image', 'gallery'));
 
-        if ($request->hasFile('image')) {
-            $Update->media()->delete();
-            $Update->addMedia($request->image)->toMediaCollection();
-        }
 
         if ($request->parent){
             $node = ProductCategory::find($request);
             $node->appendNode($Update);
         }
 
+        if ($request->removeImage == "1") {
+            $Update->media()->where('collection_name', 'page')->delete();
+        }
+
+        if ($request->hasFile('image')) {
+            $Update->media()->where('collection_name', 'page')->delete();
+            $Update->addMedia($request->image)->toMediaCollection('page');
+        }
+
+        if ($request->hasfile('gallery')) {
+            foreach ($request->gallery as $item) {
+                $Update->addMedia($item)->toMediaCollection('gallery');
+            }
+        }
+
+
+        $Update->save();
+
         toast(SWEETALERT_MESSAGE_UPDATE,'success');
+
+
         return redirect()->route('productcategory.index');
 
     }

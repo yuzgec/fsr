@@ -83,7 +83,7 @@
         <div class="container">
             <div class="bixol-nav">
                 <a href="{{ route('home') }}" class="bixol-header-logo">
-                    <img src="/logo.png" alt="{{ config('app.name') }}">
+                    <img src="/logo.svg" alt="{{ config('app.name') }}">
                 </a>
                 <nav class="desktop-menu">
                     <ul>
@@ -95,6 +95,9 @@
                                 @endforeach
                             </ul>
                         </li>
+                        <li><a href="{{ route('contactus') }}">Kalite</a></li>
+                        <li><a href="{{ route('contactus') }}">{{ __('site.iletisim') }}</a></li>
+
 
                         @foreach($ProductCategory->where('parent_id', 0) as $row)
                             <li class="has-submenu"><a href="{{ route('categorydetail',$row->slug) }}">{{ $row->title }}</a>
@@ -109,7 +112,6 @@
                                 </ul>
                             </li>
                         @endforeach
-                        <li><a href="{{ route('contactus') }}">{{ __('site.iletisim') }}</a></li>
                     </ul>
                 </nav>
             </div>
@@ -117,7 +119,7 @@
                 <div class="row align-items-center">
                     <div class="col-6">
                         <a href="{{ route('home') }}" class="bixol-logo">
-                            <img src="/mobil_logo.png" alt="{{ __('site.firma') }}">
+                            <img src="/logo.svg" alt="{{ __('site.firma') }}">
                         </a>
                     </div>
                     <div class="col-6">

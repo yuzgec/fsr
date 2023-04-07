@@ -2,7 +2,7 @@
 @section('content')
     @include('frontend.layout.slider')
 
-    <section class="h4-about-section pt-50 pb-30">
+    <section class="h4-about-section pt-50">
         <div class="container">
             <div class="row">
                 <div class="col-lg-6 order-2 order-lg-1">
@@ -16,11 +16,11 @@
                 <div class="col-lg-6 order-1 order-lg-2">
                     <div class="about-right">
                         <div class="img-wrapper">
-                            <img src="/storage/3/conversions/1-img.jpg"  alt="{{ __('site.firma') }}">
+                            <img src="/fabrika.jpg"  alt="{{ __('site.firma') }}">
                             <div class="ab-right-content">
                                 <div class="dark-bg">
-                                    <span class="title">600+</span>
-                                    <span class="subtitle">{{__('site.musteri')}}</span>
+                                    <span class="subtitle">20+ Ülke</span>
+                                    <span class="subtitle">İhracaat</span>
                                 </div>
                             </div>
                         </div>
@@ -30,7 +30,7 @@
         </div>
     </section>
 
-    <section class="h4-blog-area pt-30 pb-50">
+    <section class="h4-blog-area pt-30">
         <div class="container">
             <div class="h4-blogs">
                 <div class="row">
@@ -39,7 +39,7 @@
                             <div class="h4-blog-column">
                                 <div class="thumb-wrapper">
                                     <a href="{{ route('productdetail', $item->slug) }}" title="{{ $item->title }}">
-                                        <img src="/storage/3/conversions/1-img.jpg">
+                                        <img src="/fabrika.jpg">
                                     </a>
                                 </div>
                                 <div class="blog-content">
@@ -58,7 +58,7 @@
         </div>
     </section>
 
-    <section class="home5-portfolio-area pt-50 mb-100">
+    <section class="home5-portfolio-area pt-50 mb-50" style="background-image: url('/arka1.jpg');background-size: cover">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-5">
@@ -77,7 +77,7 @@
                 @foreach($ProductCategory->where('parent_id', 0) as $item)
                     <div class="portfolio-single">
                     <div class="img-wrapper">
-                        <img src="/storage/3/conversions/1-img.jpg"  alt="{{ __('site.firma') }}">
+                        <img src="{{ (!$item->getFirstMediaUrl('page')) ? '/resimyok.jpg' : $item->getFirstMediaUrl('page')}}"  alt="{{ __('site.firma') }}">
                         <div class="overlay">
                             <a href="{{ route('categorydetail',$item->slug) }}" title="{{ $item->title }}">
                                 <i class="fas fa-plus"></i>
@@ -109,7 +109,7 @@
     </section>
 
     <section class="bixol-about-section mt-350">
-        <span class="bixol-about-bg"><img src="/frontend/images/home1/bg-before-after.jpg"  alt="{{ __('site.firma') }}"></span>
+        <span class="bixol-about-bg"><img src="/NEDEN-FSR-10.jpg"  alt="{{ __('site.firma') }}"></span>
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-6">
@@ -126,8 +126,8 @@
                             </div>
                             <div class="bixol-compare-slider">
                                 <div class="before-after">
-                                    <img src="/frontend/images/home1/compare-1.jpg"  alt="{{ __('site.firma') }}">
-                                    <img src="/frontend/images/home1/compare-2.jpg"  alt="{{ __('site.firma') }}">
+                                    <img src="/NEDEN-FSR-11.jpg"  alt="{{ __('site.firma') }}">
+                                    <img src="/NEDEN-FSR-12.jpg"  alt="{{ __('site.firma') }}">
                                 </div>
                             </div>
                         </div>
@@ -147,12 +147,12 @@
                         <div class="bixol-about-content">
                             <div class="video-wrapper">
                                 <div class="video-thumb">
-                                    <img src="/frontend/images/home1/video-thumb.jpg"  alt="{{ __('site.firma') }}">
+                                    <img src="/video.jpg"  alt="{{ __('site.firma') }}" style="width: 150px">
                                     <a href="https://www.youtube.com/watch?v=jhFDyDgMVUI" class="video-popup"><i class="fas fa-play"></i></a>
                                 </div>
                             </div>
                             <div class="video-content">
-                                <a href="services.html"><span class="title">Tanıtım Videosu</span></a>
+                                <a href="{{ route('home') }}"><span class="title">Tanıtım Videosu</span></a>
                                 <p>Firmamıza ait üretim ve ürünleri ile ilgili tanıtım videomuz</p>
                             </div>
                         </div>
@@ -172,8 +172,8 @@
                                 <span><i class="flaticon flaticon-furniture-and-household"></i></span>
                             </div>
                             <div class="bixol-service-content">
-                                <a href="service-details.html"><h5>Plumbing service</h5></a>
-                                <p>As a app web crawler expert a significant of internet.</p>
+                                <a href="{{ route('home') }}"><h5>Özellik Başlık</h5></a>
+                                <p>özellik açıklması gelecek. özellik açıklması gelecek.</p>
                             </div>
                         </div>
                         <div class="bixol-service-item">
@@ -181,8 +181,8 @@
                                 <span><i class="flaticon flaticon-clean"></i></span>
                             </div>
                             <div class="bixol-service-content">
-                                <a href="service-details.html"><h5>Office Cleaning</h5></a>
-                                <p>As a app web crawler expert a significant of internet.</p>
+                                <a href="{{ route('home') }}"><h5>Özellik Başlık</h5></a>
+                                <p>özellik açıklması gelecek. özellik açıklması gelecek.</p>
                             </div>
                         </div>
                         <div class="bixol-service-item">
@@ -190,8 +190,8 @@
                                 <span><i class="flaticon flaticon-garment"></i></span>
                             </div>
                             <div class="bixol-service-content">
-                                <a href="service-details.html"><h5>Laundry Service</h5></a>
-                                <p>As a app web crawler expert a significant of internet.</p>
+                                <a href="{{ route('home') }}"><h5>Özellik Başlık</h5></a>
+                                <p>özellik açıklması gelecek. özellik açıklması gelecek.</p>
                             </div>
                         </div>
                     </div>
@@ -199,12 +199,12 @@
                 <div class="col-lg-4">
                     <div class="bixol-service-middle">
                         <div class="img-wrapper">
-                            <img src="/frontend/images/home1/sr-middle.png"  alt="{{ __('site.firma') }}">
+                            <img src="/orta-haberler.jpg"  alt="{{ __('site.firma') }}">
                             <div class="banner-content">
                                 <span class="banner-svg-1"></span>
                                 <span class="banner-svg-2"></span>
-                                <h3>25+</h3>
-                                <p>Service <br>we provide</p>
+                                <h3>300+</h3>
+                                <p style="margin-top:-7px">Ürün Çeşidi</p>
                             </div>
                         </div>
                     </div>
@@ -216,8 +216,8 @@
                                 <span><i class="flaticon flaticon-toilet"></i></span>
                             </div>
                             <div class="bixol-service-content">
-                                <a href="service-details.html"><h5>Toilet Cleaning</h5></a>
-                                <p>As a app web crawler expert a significant of internet.</p>
+                                <a href="{{ route('home') }}"><h5>Özellik Başlık</h5></a>
+                                <p>özellik açıklması gelecek. özellik açıklması gelecek.</p>
                             </div>
                         </div>
                         <div class="bixol-service-item">
@@ -225,8 +225,8 @@
                                 <span><i class="flaticon flaticon-window-cleaner"></i></span>
                             </div>
                             <div class="bixol-service-content">
-                                <a href="service-details.html"><h5>Window Cleaning</h5></a>
-                                <p>As a app web crawler expert a significant of internet.</p>
+                                <a href="{{ route('home') }}"><h5>Özellik Başlık</h5></a>
+                                <p>özellik açıklması gelecek. özellik açıklması gelecek.</p>
                             </div>
                         </div>
                         <div class="bixol-service-item">
@@ -234,8 +234,8 @@
                                 <span><i class="flaticon flaticon-detergent"></i></span>
                             </div>
                             <div class="bixol-service-content">
-                                <a href="service-details.html"><h5>Kitchen Cleaning</h5></a>
-                                <p>As a app web crawler expert a significant of internet.</p>
+                                <a href="{{ route('home') }}"><h5>Özellik Başlık</h5></a>
+                                <p>özellik açıklması gelecek. özellik açıklması gelecek.</p>
                             </div>
                         </div>
                     </div>
@@ -244,7 +244,212 @@
         </div>
     </section>
 
-    <section class="home2-blog-area pb-150">
+    <div class="bixol-case-study" >
+        <div class="container" style="padding-bottom: 580px;background-image: url('/fsr-world.jpg');background-repeat: no-repeat">
+
+        </div>
+    </div>
+
+
+    <section class="bixol-feedback" data-background="/baloncuk.jpg">
+        <div class="container">
+            <div class="bixol-feedback-top">
+                <div class="row align-items-center">
+                    <div class="col-lg-6">
+                        <div class="bixol-title-area">
+                            <span class="bixol-subtitle">Kullanıcı Yorumları</span>
+                            <h3>Neden tercih ediliyoruz.</h3>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="bf-desc">
+                            <p>Bizi tercih eden müşterilerimizin yorumları.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bixol-feedback-slider">
+                <div class="feedback-column">
+                    <span class="quote-icon"><i>,,</i></span>
+                    <div class="feedback-content">
+                        <p>Dr.Shield temizlik ürünleri, evinizin her köşesini temizlemeniz
+                            için ihtiyacınız olan tüm araçları sunar. Ürünlerinin yüksek kalitesi ve performansı sayesinde, eviniz her zaman tertemiz ve
+                            hijyenik kalır</p>
+                    </div>
+                    <div class="feedback-rating">
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                    </div>
+                    <div class="feedback-client-info">
+                        <div class="client-thumb">
+                            <img src="/yorum/1.jpg" alt="">
+                            <svg class="svg-1" xmlns="http://www.w3.org/2000/svg" width="91" height="69" viewBox="0 0 91 69">
+                                <g>
+                                    <path class="svg-path-1" d="M2.148,67.79c-6.5-3.873,3.333-51.582,35.7-64.084,7.869-3.039,20.244-5.27,32.042,0,9.869,4.409,22.9,15.479,20.141,25.634C88.282,35.8,80.315,41.292,73.556,40.326c-5.818-.832-7.942-6.419-11.9-8.24C42.754,23.4,9.5,72.173,2.148,67.79Z"/>
+                                </g>
+                            </svg>
+                            <svg class="svg-2" xmlns="http://www.w3.org/2000/svg" width="91" height="69" viewBox="0 0 91 69">
+                                <g>
+                                    <path class="svg-path-2" d="M88.258,0.506c6.5,3.874-3.333,51.582-35.7,64.084-7.869,3.039-20.244,5.27-32.042,0C10.644,60.181-2.383,49.111.372,38.956,2.124,32.5,10.091,27,16.851,27.97c5.818,0.832,7.942,6.419,11.9,8.24C47.652,44.9,80.9-3.877,88.258.506Z"/>
+                                </g>
+                            </svg>
+
+                        </div>
+                        <div class="clients-name">
+                            <h6>Engin Şenol</h6>
+                            <span>İnşaat Mühendisi</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-column">
+                    <span class="quote-icon"><i>,,</i></span>
+                    <div class="feedback-content">
+                        <p>Dr.Shield temizlik ürünleri, evinizin her türlü kir ve lekeyi temizlemek için idealdir. Ürünlerinin benzersiz formülleri
+                            sayesinde, evinizi kolayca temizleyebilir ve ferah bir ortam
+                            oluşturabilirsiniz</p>
+                    </div>
+                    <div class="feedback-rating">
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                    </div>
+                    <div class="feedback-client-info">
+                        <div class="client-thumb">
+                            <img src="/yorum/2.jpg" alt="">
+                            <svg class="svg-1" xmlns="http://www.w3.org/2000/svg" width="91" height="69" viewBox="0 0 91 69">
+                                <g>
+                                    <path class="svg-path-1" d="M2.148,67.79c-6.5-3.873,3.333-51.582,35.7-64.084,7.869-3.039,20.244-5.27,32.042,0,9.869,4.409,22.9,15.479,20.141,25.634C88.282,35.8,80.315,41.292,73.556,40.326c-5.818-.832-7.942-6.419-11.9-8.24C42.754,23.4,9.5,72.173,2.148,67.79Z"/>
+                                </g>
+                            </svg>
+                            <svg class="svg-2" xmlns="http://www.w3.org/2000/svg" width="91" height="69" viewBox="0 0 91 69">
+                                <g>
+                                    <path class="svg-path-2" d="M88.258,0.506c6.5,3.874-3.333,51.582-35.7,64.084-7.869,3.039-20.244,5.27-32.042,0C10.644,60.181-2.383,49.111.372,38.956,2.124,32.5,10.091,27,16.851,27.97c5.818,0.832,7.942,6.419,11.9,8.24C47.652,44.9,80.9-3.877,88.258.506Z"/>
+                                </g>
+                            </svg>
+
+                        </div>
+                        <div class="clients-name">
+                            <h6>Filiz Nurtepe</h6>
+                            <span>Bankacı</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-column">
+                    <span class="quote-icon"><i>,,</i></span>
+                    <div class="feedback-content">
+                        <p>Dr.Shield temizlik ürünleri, evinizin temizliği için ihtiyacınız
+                            olan her şeyi sunar. Ürünlerinin etkili formülleri ve kullanım
+                            kolaylığı sayesinde, evinizi taze ve hijyenik tutmak hiç bu
+                            kadar kolay olmamıştı</p>
+                    </div>
+                    <div class="feedback-rating">
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                    </div>
+                    <div class="feedback-client-info">
+                        <div class="client-thumb">
+                            <img src="/yorum/3.jpg" alt="">
+                            <svg class="svg-1" xmlns="http://www.w3.org/2000/svg" width="91" height="69" viewBox="0 0 91 69">
+                                <g>
+                                    <path class="svg-path-1" d="M2.148,67.79c-6.5-3.873,3.333-51.582,35.7-64.084,7.869-3.039,20.244-5.27,32.042,0,9.869,4.409,22.9,15.479,20.141,25.634C88.282,35.8,80.315,41.292,73.556,40.326c-5.818-.832-7.942-6.419-11.9-8.24C42.754,23.4,9.5,72.173,2.148,67.79Z"/>
+                                </g>
+                            </svg>
+                            <svg class="svg-2" xmlns="http://www.w3.org/2000/svg" width="91" height="69" viewBox="0 0 91 69">
+                                <g>
+                                    <path class="svg-path-2" d="M88.258,0.506c6.5,3.874-3.333,51.582-35.7,64.084-7.869,3.039-20.244,5.27-32.042,0C10.644,60.181-2.383,49.111.372,38.956,2.124,32.5,10.091,27,16.851,27.97c5.818,0.832,7.942,6.419,11.9,8.24C47.652,44.9,80.9-3.877,88.258.506Z"/>
+                                </g>
+                            </svg>
+
+                        </div>
+                        <div class="clients-name">
+                            <h6>Yılmaz Arslan</h6>
+                            <span>Organizatör</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-column">
+                    <span class="quote-icon"><i>,,</i></span>
+                    <div class="feedback-content">
+                        <p>Tercih ettiğim markalar arasında, kalitesine ve kokusuna
+                            bayıldığım bir ürün. Bu ürünü bizimle buluşturan ve işini iyi
+                            yapan insanlara Teşekkürler gerçekten.</p>
+                    </div>
+                    <div class="feedback-rating">
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                    </div>
+                    <div class="feedback-client-info">
+                        <div class="client-thumb">
+                            <img src="/yorum/4.jpg" alt="">
+                            <svg class="svg-1" xmlns="http://www.w3.org/2000/svg" width="91" height="69" viewBox="0 0 91 69">
+                                <g>
+                                    <path class="svg-path-1" d="M2.148,67.79c-6.5-3.873,3.333-51.582,35.7-64.084,7.869-3.039,20.244-5.27,32.042,0,9.869,4.409,22.9,15.479,20.141,25.634C88.282,35.8,80.315,41.292,73.556,40.326c-5.818-.832-7.942-6.419-11.9-8.24C42.754,23.4,9.5,72.173,2.148,67.79Z"/>
+                                </g>
+                            </svg>
+                            <svg class="svg-2" xmlns="http://www.w3.org/2000/svg" width="91" height="69" viewBox="0 0 91 69">
+                                <g>
+                                    <path class="svg-path-2" d="M88.258,0.506c6.5,3.874-3.333,51.582-35.7,64.084-7.869,3.039-20.244,5.27-32.042,0C10.644,60.181-2.383,49.111.372,38.956,2.124,32.5,10.091,27,16.851,27.97c5.818,0.832,7.942,6.419,11.9,8.24C47.652,44.9,80.9-3.877,88.258.506Z"/>
+                                </g>
+                            </svg>
+
+                        </div>
+                        <div class="clients-name">
+                            <h6>Işıl Koç</h6>
+                            <span>Reklamcı</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback-column">
+                    <span class="quote-icon"><i>,,</i></span>
+                    <div class="feedback-content">
+                        <p>Dr.Shield temizlik ürünleri, evinizi derinlemesine temizlemek
+                            için harika bir seçimdir. Ürünlerinin güçlü formülleri sayesinde,
+                            zorlu kirleri ve lekeleri çıkarmak çok daha kolay hale geliyor.</p>
+                    </div>
+                    <div class="feedback-rating">
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                        <span><i class="fas fa-star"></i></span>
+                    </div>
+                    <div class="feedback-client-info">
+                        <div class="client-thumb">
+                            <img src="/yorum/5.jpg" alt="">
+                            <svg class="svg-1" xmlns="http://www.w3.org/2000/svg" width="91" height="69" viewBox="0 0 91 69">
+                                <g>
+                                    <path class="svg-path-1" d="M2.148,67.79c-6.5-3.873,3.333-51.582,35.7-64.084,7.869-3.039,20.244-5.27,32.042,0,9.869,4.409,22.9,15.479,20.141,25.634C88.282,35.8,80.315,41.292,73.556,40.326c-5.818-.832-7.942-6.419-11.9-8.24C42.754,23.4,9.5,72.173,2.148,67.79Z"/>
+                                </g>
+                            </svg>
+                            <svg class="svg-2" xmlns="http://www.w3.org/2000/svg" width="91" height="69" viewBox="0 0 91 69">
+                                <g>
+                                    <path class="svg-path-2" d="M88.258,0.506c6.5,3.874-3.333,51.582-35.7,64.084-7.869,3.039-20.244,5.27-32.042,0C10.644,60.181-2.383,49.111.372,38.956,2.124,32.5,10.091,27,16.851,27.97c5.818,0.832,7.942,6.419,11.9,8.24C47.652,44.9,80.9-3.877,88.258.506Z"/>
+                                </g>
+                            </svg>
+
+                        </div>
+                        <div class="clients-name">
+                            <h6>Neslihan Tepeli</h6>
+                            <span>İç Mimar</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="home2-blog-area pb-50">
         <div class="container">
             <div class="blog-top-title">
                 <div class="row align-items-center">
@@ -262,117 +467,45 @@
                 </div>
             </div>
             <div class="home2-blog-slider">
+                @for($i=1;$i <= 8;$i++)
                 <div class="blog-single-item">
                     <div class="thumb-wrapper">
-                        <a href="{{ route('home') }}"><img src="/frontend/images/home2/blog-1.jpg"  alt="{{ __('site.firma') }}"></a>
+                        <a href="{{ route('home') }}"><img src="/haberler.jpg"  alt="{{ __('site.firma') }}"></a>
                     </div>
                     <div class="blog-content">
                         <div class="blog-meta">
-                            <span><i class="fas fa-calendar-alt"></i>01 01,2023</span>
-                            <span><i class="fas fa-eye"></i>32 Görüntülenme</span>
+                            <span><i class="fas fa-calendar-alt"></i>{{ rand(1,12) }} {{ rand(1,31) }},2023</span>
+                            <span><i class="fas fa-eye"></i>{{ rand(25,132) }} Görüntülenme</span>
                         </div>
                         <div class="blog-title">
-                            <a href="{{ route('home') }}"><h5>Haber Duyuru Başlık</h5></a>
+                            <a href="{{ route('home') }}"><h5>Haber Duyuru Başlık {{ $i }}</h5></a>
                         </div>
                         <div class="readmore-btn">
                             <a href="{{ route('home') }}">Devamını Oku <i class="fas fa-angle-double-right"></i></a>
                         </div>
                     </div>
                 </div>
-
-                <div class="blog-single-item">
-                    <div class="thumb-wrapper">
-                        <a href="{{ route('home') }}"><img src="/frontend/images/home2/blog-1.jpg"  alt="{{ __('site.firma') }}"></a>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="fas fa-calendar-alt"></i>01 01,2023</span>
-                            <span><i class="fas fa-eye"></i>32 Görüntülenme</span>
-                        </div>
-                        <div class="blog-title">
-                            <a href="{{ route('home') }}"><h5>Haber Duyuru Başlık</h5></a>
-                        </div>
-                        <div class="readmore-btn">
-                            <a href="{{ route('home') }}">Devamını Oku <i class="fas fa-angle-double-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-single-item">
-                    <div class="thumb-wrapper">
-                        <a href="{{ route('home') }}"><img src="/frontend/images/home2/blog-1.jpg"  alt="{{ __('site.firma') }}"></a>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="fas fa-calendar-alt"></i>01 01,2023</span>
-                            <span><i class="fas fa-eye"></i>32 Görüntülenme</span>
-                        </div>
-                        <div class="blog-title">
-                            <a href="{{ route('home') }}"><h5>Haber Duyuru Başlık</h5></a>
-                        </div>
-                        <div class="readmore-btn">
-                            <a href="{{ route('home') }}">Devamını Oku <i class="fas fa-angle-double-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-single-item">
-                    <div class="thumb-wrapper">
-                        <a href="{{ route('home') }}"><img src="/frontend/images/home2/blog-1.jpg"  alt="{{ __('site.firma') }}"></a>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="fas fa-calendar-alt"></i>01 01,2023</span>
-                            <span><i class="fas fa-eye"></i>32 Görüntülenme</span>
-                        </div>
-                        <div class="blog-title">
-                            <a href="{{ route('home') }}"><h5>Haber Duyuru Başlık</h5></a>
-                        </div>
-                        <div class="readmore-btn">
-                            <a href="{{ route('home') }}">Devamını Oku <i class="fas fa-angle-double-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-single-item">
-                    <div class="thumb-wrapper">
-                        <a href="{{ route('home') }}"><img src="/frontend/images/home2/blog-1.jpg"  alt="{{ __('site.firma') }}"></a>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="fas fa-calendar-alt"></i>01 01,2023</span>
-                            <span><i class="fas fa-eye"></i>32 Görüntülenme</span>
-                        </div>
-                        <div class="blog-title">
-                            <a href="{{ route('home') }}"><h5>Haber Duyuru Başlık</h5></a>
-                        </div>
-                        <div class="readmore-btn">
-                            <a href="{{ route('home') }}">Devamını Oku <i class="fas fa-angle-double-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="blog-single-item">
-                    <div class="thumb-wrapper">
-                        <a href="{{ route('home') }}"><img src="/frontend/images/home2/blog-1.jpg"  alt="{{ __('site.firma') }}"></a>
-                    </div>
-                    <div class="blog-content">
-                        <div class="blog-meta">
-                            <span><i class="fas fa-calendar-alt"></i>01 01,2023</span>
-                            <span><i class="fas fa-eye"></i>32 Görüntülenme</span>
-                        </div>
-                        <div class="blog-title">
-                            <a href="{{ route('home') }}"><h5>Haber Duyuru Başlık</h5></a>
-                        </div>
-                        <div class="readmore-btn">
-                            <a href="{{ route('home') }}">Devamını Oku <i class="fas fa-angle-double-right"></i></a>
-                        </div>
-                    </div>
-                </div>
+                @endfor
             </div>
         </div>
     </section>
-    <!-- Blog Area End -->
+
+    <section class="home2-blog-area pb-30">
+            <div class="home2-fabrika-slider">
+                @for($i=1;$i <= 18;$i++)
+                <div class="blog-single-item">
+                    <div class="thumb-wrapper">
+                        <a href="{{ route('home') }}"><img src="/fabrika/fabrika{{ $i }}.jpg"  alt="{{ __('site.firma') }}"></a>
+                    </div>
+                </div>
+                @endfor
+
+            </div>
+    </section>
 
 @endsection
 @section('customJS')
-
+    <script src="/frontend/js/vendor/before-after.js"></script>
     <script>
         var	tpj = jQuery;
         if(window.RS_MODULES === undefined) window.RS_MODULES = {};

@@ -1,4 +1,4 @@
-<footer class="bixol-footer pt-100 pb-50" data-background="/frontend/images/footer-bg.png">
+<footer class="bixol-footer pt-100 pb-50" data-background="/arka1.jpg">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-md-6 col-sm-6">
@@ -10,12 +10,14 @@
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="bixol-footer-widget">
                     <h4>Hakkımızda</h4>
-                    <p>Fsr Grup şirketi olarak Kalite Politikamız Umhitte, işletmelerin ekonomik gücünün, rekabet gücü ile doğru orantılı olduğunu kabul eder. Bu nedenle iç ve dış pazar taleplerini, zamanında algılar. Yüksek kaliteli ürünleri, en düşük maliyetle oluşturacak teknolojileri kullanır.</p>
+                    <p>Fsr Grup şirketi olarak Kalite Politikamız Umhitte, işletmelerin ekonomik gücünün,
+                        rekabet gücü ile doğru orantılı olduğunu kabul eder. Bu nedenle iç ve dış pazar taleplerini,
+                        zamanında algılar. Yüksek kaliteli ürünleri, en düşük maliyetle oluşturacak teknolojileri kullanır.</p>
                 </div>
             </div>
             <div class="col-lg-3 col-md-6 col-sm-6">
                 <div class="bixol-footer-widget">
-                    <h4>Official info</h4>
+                    <h4>İletişim Bilgileri</h4>
                     <div class="bixol-footer-address">
                         <ul>
                             <li><i class="fas fa-map-marker-alt text-white"></i>{{ config('settings.adres1') }}</li>

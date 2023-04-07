@@ -152,6 +152,9 @@ Last change:    00/00/00
 					]
 				});
 
+
+
+
 				$(".bixol-feedback-slider").slick({
 					slidesToShow: 3,
 					autoplay: true,
@@ -333,6 +336,33 @@ Last change:    00/00/00
 					]
 				});
 
+
+                $(".home2-fabrika-slider").slick({
+                    slidesToShow: 5,
+                    infinite: true,
+                    centerMode: true,
+                    autoplay: true,
+                    autoplaySpeed: 400,
+                    draggable:true,
+                    dots: false,
+                    arrows: false,
+                    cssEase: 'linear',
+                    responsive: [
+                        {
+                            breakpoint: 992,
+                            settings: {
+                                slidesToShow: 2,
+                            }
+                        },
+                        {
+                            breakpoint: 768,
+                            settings: {
+                                slidesToShow: 1,
+                            }
+                        }
+                    ]
+                });
+
 				$(".home2-blog-slider").slick({
 					autoplay: true,
 					slidesToShow: 3,
@@ -434,7 +464,7 @@ Last change:    00/00/00
 
 				$(".home5-portfolio-slider").slick({
 					autoplay: true,
-					slidesToShow: 3,
+					slidesToShow: 4,
 					slidesToScroll: 2,
 					prevArrow: '<button type="button" class="prev-btn"><i class="fas fa-arrow-left"></i></button>',
 					nextArrow: '<button type="button" class="next-btn"><i class="fas fa-arrow-right"></i></button>',
