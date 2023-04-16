@@ -21,7 +21,6 @@ class HomeController extends Controller
         return view('frontend.index', compact('Hakkimizda'));
     }
 
-
     public function demo(){
         SEOMeta::setTitle("FSR Kimya");
         SEOMeta::setDescription("FSR Kimya");
@@ -30,11 +29,9 @@ class HomeController extends Controller
         return view('frontend.index2', compact('Hakkimizda'));
     }
 
-
-
     public function categorydetail($url)
     {
-        $Detay = ProductCategory::whereHas('translations', function ($query) use ($url) {
+        $Detay = ProductCategory::with('getProduct')->whereHas('translations', function ($query) use ($url) {
             $query->where('slug', $url);
         })->first();
 
@@ -42,7 +39,12 @@ class HomeController extends Controller
 
         $Category = ProductCategory::where('parent_id',$Detay->id)->get();
 
-        $Product =  Product::where('category',$Detay->id)->get();
+
+        $Product =  Product::whereHas('getCategory',  function ($query) use ($Detay) {
+            $query->where('category_id', $Detay->id);
+        })->get();
+
+        //dd($Product);
 
         SEOMeta::setTitle($Detay->title.' | FSR Kimya');
         SEOMeta::setDescription("FSR Kimya");

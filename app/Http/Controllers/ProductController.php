@@ -37,8 +37,6 @@ class ProductController extends Controller
             }
         }
 
-        $New->save();
-
         if($request->category) {
             foreach ($request->category as $c){
                 $Category = new ProdoctCategoryPivot;
@@ -60,8 +58,6 @@ class ProductController extends Controller
     public function edit($id)
     {
         $Edit = Product::with('getCategory')->where('id',$id)->first();
-
-        //dd($Edit->getCategory);
         $Kategori = ProductCategory::get()->toFlatTree();
 
         return view('backend.product.edit', compact('Edit', 'Kategori'));
@@ -88,12 +84,9 @@ class ProductController extends Controller
 
         $Update->save();
 
-        if($request->category) {
+       if($request->category) {
             foreach ($request->category as $c){
-                $Category = new ProdoctCategoryPivot;
-                $Category->product_id = $Update->id;
-                $Category->category_id = $c;
-                $Category->save();
+               ProdoctCategoryPivot::updateOrCreate(['product_id' => $Update->id, 'category_id' => $c]);
             }
         }
 

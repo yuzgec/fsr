@@ -94,6 +94,9 @@
 
             <label class="form-label">Ürün Kodu</label>
             <input type="text" placeholder="Ürün Kodu" name="sku" class="form-control">
+
+            <label class="form-label">Ürün Miktarı</label>
+            <input type="text" placeholder="Miktarı" name="option1" class="form-control">
         {{--    <div class="form-group mb-3 row">
                 <div class="col-6 mt-1">
                     <div class="input-group mb-2">

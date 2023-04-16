@@ -71,7 +71,6 @@
                                 <x-form-inputtext label="Seo Açıklama" name="seo2:{{ $localeCode }}"/>
                                 <x-form-inputtext label="Seo Anahtar Kelime " name="seo3:{{ $localeCode }}"/>
 
-
                                 <div class="row d-flex justify-content-center align-items-center" style="border: 1px solid #eee">
                                     <div class="col-md-3">
                                         <img src="{{ (!$Edit->getFirstMediaUrl('page')) ? '/backend/resimyok.jpg': $Edit->getFirstMediaUrl('page')}}" class="img-fluid mb-2 mt-2" alt="Image">
@@ -114,7 +113,11 @@
                     </div>
                 </div>
                 <label class="form-label">Ürün Kodu</label>
-                <input type="text" placeholder="Ürün Kodu" class="form-control mb-2">
+                <input type="text" placeholder="Ürün Kodu" class="form-control mb-2" value="{{ $Edit->sku }}">
+
+                <label class="form-label">Ürün Miktarı</label>
+                <input type="text" placeholder="Miktarı" name="option1" class="form-control" value="{{ $Edit->option1 }}">
+
                {{-- <div class="form-group mb-2 row">
                     <div class="col-6">
                         <div class="input-group mb-2">

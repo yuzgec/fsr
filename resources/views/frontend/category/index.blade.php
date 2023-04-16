@@ -12,7 +12,6 @@
         </div>
     </div>
 
-
     <section class="h4-blog-area pt-30 pb-50">
         <div class="container">
             <div class="h4-blogs">
