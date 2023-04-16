@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\PageCategory;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
 
 class ProductCategoryController extends Controller
 {
@@ -24,9 +22,7 @@ class ProductCategoryController extends Controller
 
     public function store(Request $request)
     {
-        //dd($request);
         $New = ProductCategory::create($request->except('_token', 'image'));
-
 
         if($request->image){
             $New->addMedia($request->image)->toMediaCollection();
@@ -36,6 +32,7 @@ class ProductCategoryController extends Controller
             $node = ProductCategory::find($request->parent_id);
             $node->appendNode($New);
         }
+
         $New->save();
 
         toast(SWEETALERT_MESSAGE_CREATE,'success');
@@ -63,7 +60,6 @@ class ProductCategoryController extends Controller
 
         $Update->update($request->except('_token', '_method', 'image', 'gallery'));
 
-
         if ($request->parent){
             $node = ProductCategory::find($request);
             $node->appendNode($Update);
@@ -84,12 +80,9 @@ class ProductCategoryController extends Controller
             }
         }
 
-
         $Update->save();
 
         toast(SWEETALERT_MESSAGE_UPDATE,'success');
-
-
         return redirect()->route('productcategory.index');
 
     }
@@ -99,7 +92,7 @@ class ProductCategoryController extends Controller
         $Delete = ProductCategory::find($id);
         if($Delete->getCategoryCount() > 0){
             alert()->error('Silinemez','Kategoriye ait sayfa bulunmaktadır.');
-            return Redirect::back();
+            return redirect()->back();
         }
         $Delete->delete();
 

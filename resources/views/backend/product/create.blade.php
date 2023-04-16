@@ -71,9 +71,7 @@
     </div>
 
     <div class="col-12 col-md-4">
-
         <div class="card mb-2 p-2" >
-
             <div class="card-header">
                 <h4 class="card-title">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2" /><line x1="9" y1="13" x2="15" y2="13" /></svg>
@@ -83,11 +81,10 @@
 
             <div class="form-group mb-3 row">
                 <div class="col-12 mt-1">
-                    <select class="form-control" data-placeholder="Kategori Seçiniz" name="category">
-                        <option>Kategori Seçiniz</option>
+                    <select class="form-control" data-placeholder="Kategori Seçiniz" multiple size="27" name="category[]" style="width: 100%">
                         @foreach($Kategori as $item)
                             <option value="{{ $item->id }}">
-                                {{ $item->title }}
+                                {{ (!$item->parent_id) ? $item->title : '--'.$item->title }}
                             </option>
                         @endforeach
                     </select>
@@ -233,7 +230,27 @@
             </div>
         </div>
 
+        {{--  <div class="card mt-2" >
+             <div class="card-header">
+                 <h4 class="card-title">
+                     <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 4h4l3 3h7a2 2 0 0 1 2 2v8a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2v-11a2 2 0 0 1 2 -2" /><line x1="9" y1="13" x2="15" y2="13" /></svg>
+                     Ürün Özellikleri
+                 </h4>
+             </div>
+        {{--<div class="row g-2">
+                 @for($i=1;$i <= 47;$i++)
+                 <div class="col-4 col-sm-1">
+                     <label class="form-imagecheck mb-2">
+                         <input name="" type="checkbox" value="{{ $i }}" class="form-imagecheck-input" style="display: none !important">
+                         <span class="form-imagecheck-figure">
+                             <img src="/frontend/images/icon/IKONLAR-{{ ($i < 10) ? '0' : null }}{{ $i }}.svg" alt="" class="" style="width:70px;">
+                           </span>
+                     </label>
+                 </div>
+                 @endfor
 
+             <
+        </div>/div>--}}
     </div>
     {{Form::close()}}
 @endsection

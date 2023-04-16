@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\ProdoctCategoryPivot;
 use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
@@ -18,17 +19,18 @@ class ProductController extends Controller
 
     public function create()
     {
-        $Kategori = ProductCategory::all();
+        $Kategori = ProductCategory::get()->toFlatTree();
         return view('backend.product.create',compact('Kategori'));
     }
 
     public function store(Request $request)
     {
-        $New = Product::create($request->except('_token', 'image', 'gallery'));
+        $New = Product::create($request->except('_token', 'image', 'gallery', 'category'));
 
         if($request->hasfile('image')){
             $New->addMedia($request->image)->toMediaCollection('page');
         }
+
         if($request->hasfile('gallery')) {
             foreach ($request->gallery as $item){
                 $New->addMedia($item)->toMediaCollection('gallery');
@@ -36,6 +38,15 @@ class ProductController extends Controller
         }
 
         $New->save();
+
+        if($request->category) {
+            foreach ($request->category as $c){
+                $Category = new ProdoctCategoryPivot;
+                $Category->product_id = $New->id;
+                $Category->category_id = $c;
+                $Category->save();
+            }
+        }
 
         toast(SWEETALERT_MESSAGE_CREATE,'success');
         return redirect()->route('product.index');
@@ -73,7 +84,6 @@ class ProductController extends Controller
             }
         }
 
-
         $Update->save();
 
         toast(SWEETALERT_MESSAGE_CREATE,'success');
@@ -83,7 +93,11 @@ class ProductController extends Controller
 
     public function destroy($id)
     {
-        //
+        $Delete = Product::findOrFail($id);
+        $Delete->delete();
+
+        toast(SWEETALERT_MESSAGE_DELETE,'success');
+        return redirect()->route('product.index');
     }
 
     public function getOrder(Request $request){
