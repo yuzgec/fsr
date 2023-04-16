@@ -61,6 +61,7 @@
                                 <x-form-inputtext label="Seo Açıklama" name="seo2:{{ $localeCode }}"/>
                                 <x-form-inputtext label="Seo Anahtar Kelime " name="seo3:{{ $localeCode }}"/>
 
+
                             </div>
                         @endforeach
                     </div>
@@ -91,6 +92,7 @@
                 </div>
             </div>
 
+            <label class="form-label">Ürün Kodu</label>
             <input type="text" placeholder="Ürün Kodu" name="sku" class="form-control">
         {{--    <div class="form-group mb-3 row">
                 <div class="col-6 mt-1">

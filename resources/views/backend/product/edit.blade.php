@@ -66,9 +66,23 @@
                                         Seo Bilgileri - {{ $properties['native'] }}
                                     </h4>
                                 </div>
+
                                 <x-form-inputtext label="Seo Başlık" name="seo1:{{ $localeCode }}"/>
                                 <x-form-inputtext label="Seo Açıklama" name="seo2:{{ $localeCode }}"/>
                                 <x-form-inputtext label="Seo Anahtar Kelime " name="seo3:{{ $localeCode }}"/>
+
+
+                                <div class="row d-flex justify-content-center align-items-center" style="border: 1px solid #eee">
+                                    <div class="col-md-3">
+                                        <img src="{{ (!$Edit->getFirstMediaUrl('page')) ? '/backend/resimyok.jpg': $Edit->getFirstMediaUrl('page')}}" class="img-fluid mb-2 mt-2" alt="Image">
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <h3>{{$Edit->title }} <span class="badge {{ strlen($Edit->title) <= 250 ? "bg-success" : "bg-danger" }}">{{strlen($Edit->title). " /250"}}</span></h3>
+                                        <p>{{$Edit->seo2 }} <span class="badge {{ strlen($Edit->seo2) <= 250 ? "bg-success" : "bg-danger" }}">{{strlen($Edit->seo2). "/250"}}</span></p>
+                                        <p></p>
+                                    </div>
+                                </div>
 
                             </div>
                         @endforeach
@@ -88,17 +102,18 @@
                 </div>
                 <div class="form-group mb-3 row">
                     <div class="col">
-                        <select class="form-control" name="category">
+                        <select class="form-control" data-placeholder="Kategori Seçiniz" multiple size="27" name="category[]" style="width: 100%">
                             @foreach($Kategori as $item)
                                 <option value="{{ $item->id }}"
-
-                                    {{ ($Edit->category == $item->id) ? 'selected' : null }}
-                                >{{ $item->title }}</option>
+                                    @foreach($Edit->getCategory as $pivot)
+                                        {{ ($pivot->category_id == $item->id) ? 'selected' : null }}
+                                    @endforeach
+                                >{{ (!$item->parent_id) ? $item->title : '--'.$item->title }}</option>
                             @endforeach
                         </select>
                     </div>
                 </div>
-
+                <label class="form-label">Ürün Kodu</label>
                 <input type="text" placeholder="Ürün Kodu" class="form-control mb-2">
                {{-- <div class="form-group mb-2 row">
                     <div class="col-6">

@@ -59,15 +59,17 @@ class ProductController extends Controller
 
     public function edit($id)
     {
-        $Edit = Product::where('id',$id)->first();
-        $Kategori = ProductCategory::all();
+        $Edit = Product::with('getCategory')->where('id',$id)->first();
+
+        //dd($Edit->getCategory);
+        $Kategori = ProductCategory::get()->toFlatTree();
 
         return view('backend.product.edit', compact('Edit', 'Kategori'));
     }
 
     public function update(Request $request, Product $Update)
     {
-        $Update->update($request->except('_token', '_method', 'image', 'gallery'));
+        $Update->update($request->except('_token', '_method', 'image', 'gallery','category'));
 
         if ($request->removeImage == "1") {
             $Update->media()->where('collection_name', 'page')->delete();
@@ -85,6 +87,15 @@ class ProductController extends Controller
         }
 
         $Update->save();
+
+        if($request->category) {
+            foreach ($request->category as $c){
+                $Category = new ProdoctCategoryPivot;
+                $Category->product_id = $Update->id;
+                $Category->category_id = $c;
+                $Category->save();
+            }
+        }
 
         toast(SWEETALERT_MESSAGE_CREATE,'success');
         return redirect()->route('product.index');

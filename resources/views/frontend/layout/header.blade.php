@@ -1,12 +1,11 @@
-<!-- Header -->
 <header class="bixol-header bg-sticky-white">
     <div class="bixol-info-bar">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-sm-8">
-                   {{-- <div class="bixol-info-left">
-                        <p>{{ __('site.firma') }}</p>
-                    </div>--}}
+                   <div class="bixol-info-left">
+                    <span class="text-white">{{ __('site.firma') }} </span>
+                    </div>
                 </div>
                 <div class="col-sm-4">
                     <div class="bixol-info-social">
@@ -16,7 +15,7 @@
                         <a href="#" class="text-white"><i class="fab fa-instagram"></i></a>
                         @foreach(LaravelLocalization::getSupportedLocales() as $localeCode => $properties)
                             <a class="text-white" rel="alternate" hreflang="{{ $localeCode }}" href="{{ LaravelLocalization::getLocalizedURL($localeCode, '/demo', [], true) }}">
-                                {{ $localeCode }}
+                                <img src="/frontend/flag/{{ $localeCode }}.svg" style="width:15px" class="img-fluid">
                             </a>
                         @endforeach
                     </div>
