@@ -74,6 +74,11 @@ class ProductCategoryController extends Controller
             $Update->addMedia($request->image)->toMediaCollection('page');
         }
 
+        if ($request->hasFile('cover')) {
+            $Update->media()->where('collection_name', 'cover')->delete();
+            $Update->addMedia($request->cover)->toMediaCollection('cover');
+        }
+
         if ($request->hasfile('gallery')) {
             foreach ($request->gallery as $item) {
                 $Update->addMedia($item)->toMediaCollection('gallery');

@@ -89,6 +89,16 @@
                     <x-form-file label="" name="image"></x-form-file>
                 </div>
 
+
+                <div class="form-group mb-1 row p-2">
+                    <div class="col">
+                        <img src="{{ (!$Edit->getFirstMediaUrl('cover')) ? '/backend/resimyok.jpg': $Edit->getFirstMediaUrl('cover')}}" class="img-fluid mb-2" width="300px" alt="cover">
+                    </div>
+                </div>
+                <div class="p-2">
+                    <x-form-file label="" name="cover"></x-form-file>
+                </div>
+
                 <div class="form-group mb-3 row p-2">
                     <label class="form-label col-12 col-form-label">Kategori</label>
                     <div class="col-12 mt-1">
