@@ -105,7 +105,7 @@
                         <select class="form-control" data-placeholder="Kategori Seçiniz"  name="parent_id">
                             <option value="">Kategori Seçiniz</option>
                             @foreach($Kategori as $item)
-                                <option value="{{ $item->id }}" {{ ($Kategori->id == $Edit->id) ? 'selected' : null }}>
+                                <option value="{{ $item->id }}" {{ ($item->id == $Edit->id) ? 'selected' : null }}>
                                     {{ $item->title }}
                                 </option>
                             @endforeach
