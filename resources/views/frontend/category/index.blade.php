@@ -40,5 +40,9 @@
         </div>
     </section>
 
+    <div class="bixol-case-study" >
+        <div class="container" style="padding-bottom: 580px;background-image: url('/fsr-world.jpg');background-repeat: no-repeat">
 
+        </div>
+    </div>
 @endsection

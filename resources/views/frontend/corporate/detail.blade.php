@@ -45,10 +45,21 @@
                         <div class="pera-text mt-20">
                             {!! $Detay->desc !!}
                         </div>
-
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="container home2-blog-area pt-50 pb-30" >
+        <div class="home2-fabrika-slider">
+            @for($i=1;$i <= 18;$i++)
+                <div class="blog-single-item">
+                    <div class="thumb-wrapper">
+                        <a href="{{ route('home') }}"><img src="/fabrika/fabrika{{ $i }}.jpg"  alt="{{ __('site.firma') }}"></a>
+                    </div>
+                </div>
+            @endfor
         </div>
     </section>
 

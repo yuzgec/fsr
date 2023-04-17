@@ -94,7 +94,7 @@
                                 @endforeach
                             </ul>
                         </li>
-                        <li><a href="{{ route('contactus') }}">Kalite</a></li>
+                        <li><a href="{{ route('corporatedetail', 'kalite') }}">Kalite</a></li>
                         <li><a href="{{ route('contactus') }}">{{ __('site.iletisim') }}</a></li>
 
 
