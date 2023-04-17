@@ -16,7 +16,7 @@ class ProductCategoryController extends Controller
 
     public function create()
     {
-        $Kategori = ProductCategory::all();
+        $Kategori = ProductCategory::get()->toFlatTree();
         return view('backend.productcategory.create',  compact('Kategori'));
     }
 
@@ -50,7 +50,7 @@ class ProductCategoryController extends Controller
     public function edit($id)
     {
         $Edit = ProductCategory::findOrFail($id);
-        $Kategori = ProductCategory::all();
+        $Kategori = ProductCategory::get()->toFlatTree();
 
         return view('backend.productcategory.edit', compact('Edit', 'Kategori'));
     }

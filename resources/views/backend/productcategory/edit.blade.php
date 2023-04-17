@@ -106,7 +106,7 @@
                             <option value="">Kategori Seçiniz</option>
                             @foreach($Kategori as $item)
                                 <option value="{{ $item->id }}" {{ ($item->id == $Edit->parent_id) ? 'selected' : null }}>
-                                    {{ $item->title }}
+                                    {{ (!$item->parent_id) ? $item->title : '--'.$item->title }}
                                 </option>
                             @endforeach
                         </select>
