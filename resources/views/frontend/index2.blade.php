@@ -449,7 +449,7 @@
         </div>
     </section>
 
-    <section class="home2-blog-area pb-50">
+    <section class="home2-blog-area pt-50 pb-50">
         <div class="container">
             <div class="blog-top-title">
                 <div class="row align-items-center">
@@ -501,6 +501,26 @@
                 @endfor
 
             </div>
+    </section>
+
+    <section class="bixol-gta-area" data-background="/iletisimback.jpg">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 offset-lg-6">
+                    <div class="bixol-gt-right">
+                        <h4>İletişim & Bilgi Formu</h4>
+                        <form action="#">
+                            <input type="text" name="fname" placeholder="Adınız Soyadınız*">
+                            <input type="text" name="pnumber" placeholder="Firma Kurum Adı">
+                            <input type="text" name="asd" placeholder="Telefon Numaranız">
+                            <input type="text" name="aaa" placeholder="Email Adresiniz...">
+                            <textarea placeholder="Mesajınız..." rows="5"></textarea>
+                            <button type="submit" class="bixol-primary-btn submit-btn">Gönder <span><i class="fab fa-telegram-plane"></i></span></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
 @endsection
