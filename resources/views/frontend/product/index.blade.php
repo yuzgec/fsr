@@ -33,7 +33,7 @@
                                 </div>
                             </div>
                             @foreach($Detay->getMedia('gallery') as $item)
-                                <div class="col-12">
+                                <div class="col-12" style="display: none">
                                     <div class="pswp-gallery__item">
                                         <a
                                             href="{{ $item->getUrl('img') }}"
