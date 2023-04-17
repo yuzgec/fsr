@@ -84,6 +84,12 @@ class PageController extends Controller
         }
 
 
+        if ($request->hasFile('cover')) {
+            $Update->media()->where('collection_name', 'cover')->delete();
+            $Update->addMedia($request->cover)->toMediaCollection('cover');
+        }
+
+
         $Update->save();
 
         toast(SWEETALERT_MESSAGE_UPDATE,'success');

@@ -89,17 +89,23 @@
                     </h4>
                 </div>
                 <div class="card-body justify-content-center align-items-center">
-                        <div class="col">
-                            <img src="{{ (!$Edit->getFirstMediaUrl('page')) ? '/backend/resimyok.jpg': $Edit->getFirstMediaUrl('page')}}" class="img-fluid mb-2 mt-2" alt="Image">
-                        </div>
-                        @if($Edit->getFirstMediaUrl('page'))
-                        <label class="form-check form-check-single form-switch mb-1"  >
-                            <input class="form-check-input switch" type="checkbox" name="removeImage" value="0">
-                            <span style="margin-left: 15px" class="">Resmi Kaldır</span>
-                        </label>
-                        @endif
+                    <div class="col">
+                        <img src="{{ (!$Edit->getFirstMediaUrl('page')) ? '/backend/resimyok.jpg': $Edit->getFirstMediaUrl('page')}}" class="img-fluid mb-2 mt-2" alt="Image">
+                    </div>
+                    @if($Edit->getFirstMediaUrl('page'))
+                    <label class="form-check form-check-single form-switch mb-1"  >
+                        <input class="form-check-input switch" type="checkbox" name="removeImage" value="0">
+                        <span style="margin-left: 15px" class="">Resmi Kaldır</span>
+                    </label>
+                    @endif
 
                     <x-form-file label="" name="image"></x-form-file>
+                    <hr>
+                    <div class="col">
+                        <img src="{{ (!$Edit->getFirstMediaUrl('cover')) ? '/backend/resimyok.jpg': $Edit->getFirstMediaUrl('cover')}}" class="img-fluid mb-2 mt-2" alt="Image">
+                    </div>
+
+                    <x-form-file label="" name="cover"></x-form-file>
                 </div>
 
             </div>
