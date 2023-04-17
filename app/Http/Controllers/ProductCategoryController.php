@@ -58,7 +58,7 @@ class ProductCategoryController extends Controller
     public function update(Request $request, ProductCategory $Update)
     {
 
-        $Update->update($request->except('_token', '_method', 'image', 'gallery'));
+        $Update->update($request->except('_token', '_method', 'image', 'gallery', 'cover'));
 
         if ($request->parent){
             $node = ProductCategory::find($request);
