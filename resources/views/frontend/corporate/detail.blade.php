@@ -1,7 +1,7 @@
 @extends('frontend.layout.app')
 @section('content')
 
-    <div class="bixol-breadcrumb" data-background="/title.jpg">
+    <div class="bixol-breadcrumb" data-background="{{ $Detay->getFirstMediaUrl('cover') }}">
 
         <div class="container">
             <div class="breadcrumb-content">

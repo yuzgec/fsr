@@ -1,7 +1,7 @@
 @extends('frontend.layout.app')
 @section('content')
 
-    <div class="bixol-breadcrumb" data-background="/title.jpg">
+    <div class="bixol-breadcrumb" data-background="/iletisim.jpg">
         <div class="container">
             <div class="breadcrumb-content">
                 <h1>{{__('site.iletisim')}}</h1>
@@ -105,7 +105,5 @@
         </div>
     </section>
 
-
-
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d17633.720190932356!2d26.9154788700421!3d38.62057162009874!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xec4b883465396bcd!2zxLBaQkHFniDEsFpNxLBSIFNFUkJFU1QgQsOWTEdFU8Sw!5e0!3m2!1str!2str!4v1670969958657!5m2!1str!2str" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d17633.720190932356!2d26.9154788700421!3d38.62057162009874!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xec4b883465396bcd!2zxLBaQkHFniDEsFpNxLBSIFNFUkJFU1QgQsOWTEdFU8Sw!5e0!3m2!1str!2str!4v1670969958657!5m2!1str!2str" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 @endsection
