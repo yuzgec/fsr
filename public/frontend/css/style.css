@@ -4225,9 +4225,10 @@ i {
     .bixol-service-section .bixol-services .bixol-service-item:hover .bixol-service-content::before {
       opacity: 1; }
     .bixol-service-section .bixol-services .bixol-service-item:hover .bixol-service-content h5 {
-      color: #ffffff; }
+      color: #3a4268;
+    }
     .bixol-service-section .bixol-services .bixol-service-item:hover .bixol-service-content p {
-      color: #ffffff; }
+      color: #3a4268; }
 
 .bixol-service-section .bixol-service-middle .img-wrapper {
   position: relative; }

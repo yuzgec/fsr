@@ -172,8 +172,8 @@
                                 <span><i class="flaticon flaticon-furniture-and-household"></i></span>
                             </div>
                             <div class="bixol-service-content">
-                                <a href="{{ route('home') }}"><h5>Özellik Başlık</h5></a>
-                                <p>özellik açıklması gelecek. özellik açıklması gelecek.</p>
+                                <a href="{{ route('home') }}"><h5>Kişisel Hijyen Ürünleri</h5></a>
+                                <p>Günlük hayatta kullanılan Kozmetik ve hijyen sağlayıcılardır.</p>
                             </div>
                         </div>
                         <div class="bixol-service-item">
@@ -181,8 +181,8 @@
                                 <span><i class="flaticon flaticon-clean"></i></span>
                             </div>
                             <div class="bixol-service-content">
-                                <a href="{{ route('home') }}"><h5>Özellik Başlık</h5></a>
-                                <p>özellik açıklması gelecek. özellik açıklması gelecek.</p>
+                                <a href="{{ route('home') }}"><h5>Ev Bakım Hijyen</h5></a>
+                                <p>Evimizde bulunan yüzeylerin ve eşyaların temizliği için önemlidir.</p>
                             </div>
                         </div>
                         <div class="bixol-service-item">
@@ -190,8 +190,8 @@
                                 <span><i class="flaticon flaticon-garment"></i></span>
                             </div>
                             <div class="bixol-service-content">
-                                <a href="{{ route('home') }}"><h5>Özellik Başlık</h5></a>
-                                <p>özellik açıklması gelecek. özellik açıklması gelecek.</p>
+                                <a href="{{ route('home') }}"><h5>Çamaşır Hijyen Ürünleri</h5></a>
+                                <p>Çamaşırların temizliği ve hijyenik olması için kullanılan ürünlerdir.</p>
                             </div>
                         </div>
                     </div>
@@ -216,8 +216,8 @@
                                 <span><i class="flaticon flaticon-toilet"></i></span>
                             </div>
                             <div class="bixol-service-content">
-                                <a href="{{ route('home') }}"><h5>Özellik Başlık</h5></a>
-                                <p>özellik açıklması gelecek. özellik açıklması gelecek.</p>
+                                <a href="{{ route('home') }}"><h5>Banyo Hijyen Ürünleri</h5></a>
+                                <p>Hijyenik tutulması, sağlığımızı korumak için önemlidir.</p>
                             </div>
                         </div>
                         <div class="bixol-service-item">
@@ -225,8 +225,8 @@
                                 <span><i class="flaticon flaticon-window-cleaner"></i></span>
                             </div>
                             <div class="bixol-service-content">
-                                <a href="{{ route('home') }}"><h5>Özellik Başlık</h5></a>
-                                <p>özellik açıklması gelecek. özellik açıklması gelecek.</p>
+                                <a href="{{ route('home') }}"><h5>Endüstriyel Hijyen </h5></a>
+                                <p>Endüstriyel alanlarda kullanılan hijyen ürünleridir.</p>
                             </div>
                         </div>
                         <div class="bixol-service-item">
@@ -234,9 +234,59 @@
                                 <span><i class="flaticon flaticon-detergent"></i></span>
                             </div>
                             <div class="bixol-service-content">
-                                <a href="{{ route('home') }}"><h5>Özellik Başlık</h5></a>
-                                <p>özellik açıklması gelecek. özellik açıklması gelecek.</p>
+                                <a href="{{ route('home') }}"><h5>Kağıt Grubu Hijyen</h5></a>
+                                <p>Birçok alanda kullanılan ürünlerdir.</p>
                             </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="bixol-ct-section pb-20 pt-30">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="bixol-counter-column bx-col-line">
+                        <div class="bixol-icon-wrapper">
+                            <span><i class="flaticon flaticon-garment"></i></span>
+                        </div>
+                        <div class="bixol-ct-content">
+                            <h3><span class="odometer" data-value="300">000</span><sup>+</sup></h3>
+                            <span class="subtitle">Üzerinde ürün</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="bixol-counter-column bx-col-line">
+                        <div class="bixol-icon-wrapper">
+                            <span><i class="flaticon flaticon-meeting"></i></span>
+                        </div>
+                        <div class="bixol-ct-content">
+                            <h3><span class="odometer" data-value="110">000</span><sup>+</sup></h3>
+                            <span class="subtitle">Deneyimli Kadro</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="bixol-counter-column bx-col-line">
+                        <div class="bixol-icon-wrapper">
+                            <span><i class="flaticon flaticon-screen"></i></span>
+                        </div>
+                        <div class="bixol-ct-content">
+                            <h3><span class="odometer" data-value="180">000</span><sup>+</sup></h3>
+                            <span class="subtitle">Devam Eden Proje</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-6">
+                    <div class="bixol-counter-column">
+                        <div class="bixol-icon-wrapper">
+                            <span><i class="flaticon flaticon-trophy"></i></span>
+                        </div>
+                        <div class="bixol-ct-content">
+                            <h3><span class="odometer" data-value="180">000</span><sup>+</sup></h3>
+                            <span class="subtitle">Kaliteli Ürün</span>
                         </div>
                     </div>
                 </div>
@@ -249,6 +299,7 @@
 
         </div>
     </div>
+
 
 
     <section class="bixol-feedback" data-background="/baloncuk.jpg">
@@ -453,15 +504,10 @@
         <div class="container">
             <div class="blog-top-title">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="bixol-title-area">
                             <span class="bixol-subtitle">{{ __('site.firma') }}</span>
-                            <h3>Haberler Duyurular</h3>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="bf-desc">
-
+                            <h3 style="font-size :24px">FSR Hijyen Grup, Türkiye'de faaliyet gösteren bir temizlik ve hijyen firmasıdır.</h3>
                         </div>
                     </div>
                 </div>
@@ -526,6 +572,8 @@
 @endsection
 @section('customJS')
     <script src="/frontend/js/vendor/before-after.js"></script>
+    <script src="/frontend/js/vendor/odometer.min.js"></script>
+
     <script>
         var	tpj = jQuery;
         if(window.RS_MODULES === undefined) window.RS_MODULES = {};
