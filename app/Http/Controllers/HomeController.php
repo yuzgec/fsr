@@ -74,9 +74,9 @@ class HomeController extends Controller
             $query->where('slug', $url);
         })->first();
 
-
-        $Product =  Product::where('category',$Detay->category)->get();
-
+        $Product =  Product::whereHas('getCategory',  function ($query) use ($Detay) {
+            $query->where('category_id', $Detay->id);
+        })->get();
 
         views($Detay)->cooldown(60)->record();
 

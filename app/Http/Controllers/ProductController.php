@@ -13,7 +13,7 @@ class ProductController extends Controller
     public function index()
     {
         $All = Product::all();
-        $Kategori = ProductCategory::all();
+        $Kategori = ProductCategory::get()->toFlatTree();
         return view('backend.product.index', compact('All', 'Kategori'));
     }
 

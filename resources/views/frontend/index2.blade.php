@@ -300,8 +300,6 @@
         </div>
     </div>
 
-
-
     <section class="bixol-feedback" data-background="/baloncuk.jpg">
         <div class="container">
             <div class="bixol-feedback-top">
