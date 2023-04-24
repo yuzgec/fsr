@@ -46,26 +46,25 @@
                                 </div>
                             @endforeach
                         </div>
-
                     </div>
+
                     <div class="col-6">
                         <div class="col-md-12 mb-3" style="border-bottom:1px dashed gray"></div>
-
                         <h3>{{ $Detay->title }}</h3>
                         {!! $Detay->desc !!}
                         <div class="col-md-12 mt-3" style="border-bottom:1px dashed gray"></div>
-                        <p>Ürün Kategori : </p>
+                        <p>Ürün Kategori :</p>
                     </div>
 
                     <div class="col-12 mt-100">
-                        <img src="/urun1.jpg" alt="FSR Kimya">
+                       <div class="d-none d-sm-block"> <img src="{{  $Detay->getFirstMediaUrl('web_tr') }}" class="img-fluid"></div>
+                       <div class="d-block d-sm-none"> <img src="{{  $Detay->getFirstMediaUrl('mobil_tr') }}" class="img-fluid"></div>
                     </div>
 
                 </div>
             </div>
         </div>
     </section>
-
 
     <section class="h4-blog-area pt-30 pb-50">
         <div class="container">

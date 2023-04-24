@@ -50,6 +50,24 @@
                                 <x-form-textarea label="Kısa Açıklama" name="short:{{ $localeCode }}"/>
 
                                 <x-form-textarea label="Açıklama" name="desc:{{ $localeCode }}" ck="aciklama{{ $localeCode }}"/>
+                                <div class="row">
+                                    <div class="col-md-3">
+
+                                    </div>
+                                    <div class="col-md-9 d-flex">
+                                        <div class="p-1">
+                                            <label>Web Kapak</label>
+                                            <x-form-file label="" name="web_{{ $localeCode }}"></x-form-file>
+                                        </div>
+
+                                        <div class="p-1">
+                                            <label>Mobil Kapak</label>
+                                            <x-form-file label="" name="mobil_{{ $localeCode }}"></x-form-file>
+                                        </div>
+
+                                    </div>
+                                </div>
+
 
                                 <div class="card-header mb-2">
                                     <h4 class="card-title">

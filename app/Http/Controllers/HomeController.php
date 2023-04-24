@@ -7,9 +7,7 @@ use App\Models\Page;
 use App\Models\Pivot;
 use App\Models\Product;
 use App\Models\ProductCategory;
-use App\Models\Service;
 use Artesaos\SEOTools\Facades\SEOMeta;
-use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
@@ -77,6 +75,8 @@ class HomeController extends Controller
         $Product =  Product::whereHas('getCategory',  function ($query) use ($Detay) {
             $query->where('product_id', $Detay->id);
         })->limit(12);
+
+
 
         views($Detay)->cooldown(60)->record();
 
