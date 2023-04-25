@@ -16,7 +16,7 @@ class HomeController extends Controller
         SEOMeta::setDescription("FSR Kimya");
         SEOMeta::setCanonical(url()->full());
         $Hakkimizda = Page::where('id', '=',1)->first();
-        return view('frontend.index', compact('Hakkimizda'));
+        return view('frontend.index2', compact('Hakkimizda'));
     }
 
     public function demo(){
