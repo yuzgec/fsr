@@ -148,7 +148,7 @@
                             <div class="video-wrapper">
                                 <div class="video-thumb">
                                     <img src="/video.jpg"  alt="{{ __('site.firma') }}" style="width: 150px">
-                                    <a href="https://www.youtube.com/watch?v=jhFDyDgMVUI" class="video-popup"><i class="fas fa-play"></i></a>
+                                    <a href="#" class="video-popup"><i class="fas fa-play"></i></a>
                                 </div>
                             </div>
                             <div class="video-content">
@@ -304,15 +304,15 @@
         <div class="container">
             <div class="bixol-feedback-top">
                 <div class="row align-items-center">
-                    <div class="col-lg-6">
+                    <div class="col-lg-8">
                         <div class="bixol-title-area">
-                            <span class="bixol-subtitle">Kullanıcı Yorumları</span>
+                            <span class="bixol-subtitle">Bizi tercih eden müşterilerimizin yorumları.</span>
                             <h3>Neden tercih ediliyoruz.</h3>
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-4">
                         <div class="bf-desc">
-                            <p>Bizi tercih eden müşterilerimizin yorumları.</p>
+                            <p></p>
                         </div>
                     </div>
                 </div>
@@ -511,7 +511,7 @@
                 </div>
             </div>
             <div class="home2-blog-slider">
-                @for($i=1;$i <= 8;$i++)
+                @foreach($Blog as $item)
                 <div class="blog-single-item">
                     <div class="thumb-wrapper">
                         <a href="{{ route('home') }}"><img src="/haberler.jpg"  alt="{{ __('site.firma') }}"></a>
@@ -522,14 +522,14 @@
                             <span><i class="fas fa-eye"></i>{{ rand(25,132) }} Görüntülenme</span>
                         </div>
                         <div class="blog-title">
-                            <a href="{{ route('home') }}"><h5>Haber Duyuru Başlık {{ $i }}</h5></a>
+                            <a href="{{ route('home') }}"><h5>Haber Duyuru Başlık </h5></a>
                         </div>
                         <div class="readmore-btn">
                             <a href="{{ route('home') }}">Devamını Oku <i class="fas fa-angle-double-right"></i></a>
                         </div>
                     </div>
                 </div>
-                @endfor
+                @endforeach
             </div>
         </div>
     </section>
@@ -554,11 +554,12 @@
                     <div class="bixol-gt-right">
                         <h4>İletişim & Bilgi Formu</h4>
                         <form action="#">
-                            <input type="text" name="fname" placeholder="Adınız Soyadınız*">
-                            <input type="text" name="pnumber" placeholder="Firma Kurum Adı">
-                            <input type="text" name="asd" placeholder="Telefon Numaranız">
-                            <input type="text" name="aaa" placeholder="Email Adresiniz...">
-                            <textarea placeholder="Mesajınız..." rows="5"></textarea>
+                            @csrf
+                            <input type="text" name="name" placeholder="Adınız Soyadınız*">
+                            <input type="text" name="company" placeholder="Firma Kurum Adı">
+                            <input type="text" name="phone" placeholder="Telefon Numaranız">
+                            <input type="text" name="email" placeholder="Email Adresiniz...">
+                            <textarea placeholder="Mesajınız..." name="message" rows="5"></textarea>
                             <button type="submit" class="bixol-primary-btn submit-btn">Gönder <span><i class="fab fa-telegram-plane"></i></span></button>
                         </form>
                     </div>
@@ -610,7 +611,7 @@
                     },
                     viewPort: {
                         global:false,
-                        globalDist:"-200px",
+                        globalDist:"-100px",
                         enable:false
                     },
                     fallbacks: {

@@ -37,9 +37,9 @@
                                     <label>{{ __('site.telefon') }}:</label>
                                     <span>{{ config('settings.telefon1') }} </span>
                                 </div>
-                                <a href="tel:1234563257"></a>
+                                <a href="tel:{{ config('settings.telefon1') }} "></a>
                             </div>
-                            <div class="bixol-header-item">
+                           {{-- <div class="bixol-header-item">
                                 <span class="bixol-icon-wrapper">
                                     <i class="flaticon flaticon-phone"></i>
                                 </span>
@@ -47,7 +47,7 @@
                                     <label>{{ __('site.telefon') }}:</label>
                                     <span>{{ config('settings.telefon2') }} </span>
                                 </div>
-                            </div>
+                            </div>--}}
                         </div>
                     </div>
                     <div class="col-lg-6">

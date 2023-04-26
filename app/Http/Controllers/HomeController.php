@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Blog;
 use App\Models\Faq;
 use App\Models\Page;
 use App\Models\Pivot;
@@ -16,7 +17,9 @@ class HomeController extends Controller
         SEOMeta::setDescription("FSR Kimya");
         SEOMeta::setCanonical(url()->full());
         $Hakkimizda = Page::where('id', '=',1)->first();
-        return view('frontend.index2', compact('Hakkimizda'));
+
+        $Blog = Blog::all();
+        return view('frontend.index2', compact('Hakkimizda','Blog'));
     }
 
     public function demo(){
@@ -24,7 +27,9 @@ class HomeController extends Controller
         SEOMeta::setDescription("FSR Kimya");
         SEOMeta::setCanonical(url()->full());
         $Hakkimizda = Page::where('id', '=',1)->first();
-        return view('frontend.index2', compact('Hakkimizda'));
+
+        $Blog = Blog::all();
+        return view('frontend.index2', compact('Hakkimizda','Blog'));
     }
 
     public function categorydetail($url)
