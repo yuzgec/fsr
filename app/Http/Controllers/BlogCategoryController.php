@@ -35,7 +35,7 @@ class BlogCategoryController extends Controller
         }
 
         toast(SWEETALERT_MESSAGE_CREATE, 'success');
-        return redirect()->route('blogcategory.index');
+        return redirect()->route('blog-categories.index');
 
     }
 
@@ -81,7 +81,7 @@ class BlogCategoryController extends Controller
         }
 
         toast(SWEETALERT_MESSAGE_UPDATE, 'success');
-        return redirect()->route('blogcategory.index');
+        return redirect()->route('blog-categories.index');
 
     }
 
@@ -95,6 +95,6 @@ class BlogCategoryController extends Controller
         $Delete->delete();
 
         toast(SWEETALERT_MESSAGE_DELETE, 'success');
-        return redirect()->route('blogcategory.index');
+        return redirect()->route('blog-categories.index');
     }
 }
