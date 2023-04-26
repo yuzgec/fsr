@@ -29,7 +29,6 @@
                             <th>Resim</th>
                             <th>Başlık</th>
                             <th>Durum</th>
-                            <th class="d-none d-lg-table-cell">Kategori</th>
                             <th class="d-none d-lg-table-cell">Oluşturma Tarihi</th>
                             <th class="w-1"></th>
                         </tr>
@@ -51,9 +50,7 @@
                             </label>
                         </td>
 
-                        <td class="text-muted d-none d-lg-table-cell">
-                            {{ $item->getCategory->title }}
-                        </td>
+
                         <td class="d-none d-lg-table-cell">
                             {{ $item->created_at->diffForHumans() }}
                         </td>

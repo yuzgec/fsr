@@ -21,6 +21,7 @@ class BlogCategory extends Model implements HasMedia,TranslatableContract
     protected $guarded = [];
     protected $table = 'blog_category';
 
+
     public function registerMediaConversions(Media $media = null): void
     {
         $this->addMediaConversion('img')->width(1000)->nonOptimized();
