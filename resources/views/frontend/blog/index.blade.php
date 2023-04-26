@@ -5,7 +5,8 @@
             <div class="breadcrumb-content">
                 <h1>{{__('site.blog')}}</h1>
                 <a href="{{ route('home') }}">{{__('site.anasayfa')}} <i class="fas fa-angle-double-right"></i></a>
-                <span>{{__('site.blog')}}</span>
+                <a href="{{ route('blog') }}">{{__('site.blog')}} <i class="fas fa-angle-double-right"></i></a>
+                <span>{{ $Detay->title }}</span>
             </div>
         </div>
     </div>
