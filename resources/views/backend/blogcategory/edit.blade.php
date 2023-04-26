@@ -1,7 +1,7 @@
 @extends('backend.layout.app')
 @section('title', $Edit->title.' | Blog Kategori Düzenle')
 @section('content')
-    {{Form::model($Edit, ["route" => ["blogcategory.update", $Edit->id],'enctype' => 'multipart/form-data'])}}
+    {{Form::model($Edit, ["route" => ["blog-categories.update", $Edit->id],'enctype' => 'multipart/form-data'])}}
     @method('PUT')
     <div class="row">
         <div class="col-12 col-md-9">

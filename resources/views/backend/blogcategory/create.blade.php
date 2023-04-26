@@ -3,7 +3,7 @@
 @section('content')
     <div class="col-12 col-md-9">
         <div class="card">
-            {{Form::open(['route' => 'blogcategory.store', 'enctype' => 'multipart/form-data'])}}
+            {{Form::open(['route' => 'blog-categories.store', 'enctype' => 'multipart/form-data'])}}
             <div class="card-header d-flex justify-content-between">
                 <x-add title="Sayfa Kategori"></x-add>
                 <div>
