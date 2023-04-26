@@ -514,18 +514,18 @@
                 @foreach($Blog as $item)
                     <div class="blog-single-item">
                         <div class="thumb-wrapper">
-                            <a href="{{ route('home') }}"><img src="/haberler.jpg"  alt="{{ __('site.firma') }}"></a>
+                            <a href="{{ route('newdetail', $item->slug)}}"><img src="{{ (!$item->getFirstMediaUrl('page')) ? '/backend/resimyok.jpg': $item->getFirstMediaUrl('page')}}"  alt="{{ __('site.firma') }}"></a>
                         </div>
                         <div class="blog-content">
                             <div class="blog-meta">
-                                <span><i class="fas fa-calendar-alt"></i>{{ rand(1,12) }} {{ rand(1,31) }},2023</span>
-                                <span><i class="fas fa-eye"></i>{{ rand(25,132) }} Görüntülenme</span>
+                                <span><i class="fas fa-calendar-alt"></i>{{ $item->created_at->diffForHumans() }}</span>
+                                <span><i class="fas fa-eye"></i>{{ views($item)->count() }} Görüntülenme</span>
                             </div>
                             <div class="blog-title">
-                                <a href="{{ route('home') }}"><h5>{{ $item->title }} </h5></a>
+                                <a href="{{ route('newdetail', $item->slug) }}"><h5>{{ $item->title }} </h5></a>
                             </div>
                             <div class="readmore-btn">
-                                <a href="{{ route('home') }}">Devamını Oku <i class="fas fa-angle-double-right"></i></a>
+                                <a href="{{ route('newdetail', $item->slug) }}">Devamını Oku <i class="fas fa-angle-double-right"></i></a>
                             </div>
                         </div>
                     </div>

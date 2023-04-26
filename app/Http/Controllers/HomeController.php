@@ -23,6 +23,7 @@ class HomeController extends Controller
     }
 
     public function demo(){
+
         SEOMeta::setTitle("FSR Kimya");
         SEOMeta::setDescription("FSR Kimya");
         SEOMeta::setCanonical(url()->full());
@@ -38,20 +39,18 @@ class HomeController extends Controller
             $query->where('slug', $url);
         })->first();
 
-        views($Detay)->cooldown(60)->record();
+        $Count = views($Detay)->cooldown(60)->record();
 
         $Category = ProductCategory::where('parent_id',$Detay->id)->get();
-
 
         $Product =  Product::whereHas('getCategory',  function ($query) use ($Detay) {
             $query->where('category_id', $Detay->id);
         })->get();
 
-        //dd($Product);
-
         SEOMeta::setTitle($Detay->title.' | FSR Kimya');
         SEOMeta::setDescription("FSR Kimya");
         SEOMeta::setCanonical(url()->full());
+
         return view('frontend.category.index', compact('Detay', 'Product', 'Category'));
     }
 
@@ -67,7 +66,6 @@ class HomeController extends Controller
         SEOMeta::setDescription("FSR Kimya");
         SEOMeta::setCanonical(url()->full());
 
-
         return view('frontend.corporate.detail', compact('Detay'));
     }
 
@@ -77,13 +75,13 @@ class HomeController extends Controller
             $query->where('slug', $url);
         })->first();
 
+
+
         $Product =  Product::whereHas('getCategory',  function ($query) use ($Detay) {
             $query->where('product_id', $Detay->id);
         })->limit(12);
 
-
-
-        views($Detay)->cooldown(60)->record();
+        $Count = views($Detay)->cooldown(60)->record();
 
         SEOMeta::setTitle($Detay->title.' | FSR Kimya');
         SEOMeta::setDescription("FSR Kimya");
@@ -91,9 +89,9 @@ class HomeController extends Controller
         return view('frontend.product.index', compact('Detay', 'Product'));
     }
 
-    public function partdetail($url)
+    public function newdetail($url)
     {
-        $Detay = Product::whereHas('translations', function ($query) use ($url) {
+        $Detay = Blog::whereHas('translations', function ($query) use ($url) {
             $query->where('slug', $url);
         })->first();
 
@@ -101,7 +99,7 @@ class HomeController extends Controller
         SEOMeta::setTitle($Detay->title.' | FSR Kimya');
         SEOMeta::setDescription("FSR Kimya");
         SEOMeta::setCanonical(url()->full());
-        return view('frontend.product.index', compact('Detay'));
+        return view('frontend.blog.index', compact('Detay'));
     }
 
     public function gallery(){

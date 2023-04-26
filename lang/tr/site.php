@@ -28,8 +28,8 @@ return [
 
 
     //Link Önekleri
-    'urun_link' => 'makineler',
-    'yedekparca_link' => 'yedekparca',
+    'urun_link' => 'urunler',
+    'haber_link' => 'haberler',
     'galeri_link' => 'galeri',
     'iletisim_link' => 'iletisim',
     'blog_link' => 'blog',

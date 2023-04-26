@@ -1,5 +1,5 @@
 @extends('backend.layout.app')
-@section('title', 'Sayfa Çöp Kutusu')
+@section('title', 'Blog Çöp Kutusu')
 
 @section('content')
     <div class="col-12">
