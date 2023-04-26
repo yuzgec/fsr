@@ -19,7 +19,7 @@ class HomeController extends Controller
         $Hakkimizda = Page::where('id', '=',1)->first();
 
         $Blog = Blog::all();
-        return view('frontend.index2', compact('Hakkimizda','Blog'));
+        return view('frontend.index', compact('Hakkimizda','Blog'));
     }
 
     public function demo(){
@@ -29,7 +29,7 @@ class HomeController extends Controller
         $Hakkimizda = Page::where('id', '=',1)->first();
 
         $Blog = Blog::all();
-        return view('frontend.index2', compact('Hakkimizda','Blog'));
+        return view('frontend.index', compact('Hakkimizda','Blog'));
     }
 
     public function categorydetail($url)

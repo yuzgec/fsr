@@ -13,7 +13,7 @@ class BlogController extends Controller
 
     public function index()
     {
-        $All = Blog::with('getCategory')->orderBy('rank')->get();
+        $All = Blog::orderBy('rank')->get();
         $Kategori = BlogCategory::all();
         return view('backend.blog.index', compact('All', 'Kategori'));
     }
