@@ -28,7 +28,9 @@
                     <div class="col-lg-6">
                         <div class="bixol-header-top-left">
                             <div class="bixol-header-item">
-                              <img src="/fsr-logo.svg" style="width: 100px;margin-left:-50px" >
+                              <a href="{{ route('home') }}">
+                                  <img src="/fsr-logo.svg" style="width: 100px;margin-left:-50px" >
+                              </a>
                             </div>
                             <div class="bixol-header-item">
                                 <span class="bixol-icon-wrapper">
@@ -61,7 +63,6 @@
                                     <label>{{ __('site.email') }}</label>
                                     <span>{{ config('settings.email1') }}</span>
                                 </div>
-                                <a href="tel:1234563257"></a>
                             </div>
                             <div class="bixol-header-item">
                                         <span class="bixol-icon-wrapper">
@@ -83,7 +84,7 @@
         <div class="container">
             <div class="bixol-nav">
                 <a href="{{ route('home') }}" class="bixol-header-logo">
-                    <img src="drshield.png" alt="{{ config('app.name') }}" >
+                    <img src="/drshield.png" alt="{{ config('app.name') }}" >
                 </a>
                 <nav class="desktop-menu">
                     <ul>

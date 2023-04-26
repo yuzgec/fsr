@@ -60,7 +60,7 @@ class HomeController extends Controller
             $query->where('slug', $url);
         })->first();
 
-        views($Detay)->cooldown(60)->record();
+        $Count = views($Detay)->cooldown(60)->record();
 
         SEOMeta::setTitle($Detay->title.' | FSR Kimya');
         SEOMeta::setDescription("FSR Kimya");
@@ -75,8 +75,6 @@ class HomeController extends Controller
             $query->where('slug', $url);
         })->first();
 
-
-
         $Product =  Product::whereHas('getCategory',  function ($query) use ($Detay) {
             $query->where('product_id', $Detay->id);
         })->limit(12);
@@ -89,17 +87,24 @@ class HomeController extends Controller
         return view('frontend.product.index', compact('Detay', 'Product'));
     }
 
+    public function blog(){
+        $All = Blog::all();
+        return view('frontend.blog.index',compact('All'));
+    }
+
+
     public function newdetail($url)
     {
         $Detay = Blog::whereHas('translations', function ($query) use ($url) {
             $query->where('slug', $url);
         })->first();
 
-        views($Detay)->cooldown(60)->record();
+        $Count = views($Detay)->cooldown(60)->record();
+
         SEOMeta::setTitle($Detay->title.' | FSR Kimya');
         SEOMeta::setDescription("FSR Kimya");
         SEOMeta::setCanonical(url()->full());
-        return view('frontend.blog.index', compact('Detay'));
+        return view('frontend.blog.detail', compact('Detay'));
     }
 
     public function gallery(){
@@ -120,9 +125,5 @@ class HomeController extends Controller
         return view('frontend.reference.index');
     }
 
-    public function blog(){
-
-        return view('frontend.blog.index');
-    }
 
 }
