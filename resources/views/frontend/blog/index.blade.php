@@ -1,6 +1,6 @@
 @extends('frontend.layout.app')
 @section('content')
-    <div class="bixol-breadcrumb" data-background="/title.jpg">
+    <div class="bixol-breadcrumb" data-background="https://www.fsrkimya.com/storage/63/hakkımızda.jpg">
         <div class="container">
             <div class="breadcrumb-content">
                 <h1>{{__('site.blog')}}</h1>
@@ -9,4 +9,55 @@
             </div>
         </div>
     </div>
+
+
+    <section class="service-details pt-50 pb-50">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <div class="sr-sidebar" style="border:1px solid #082680;border-radius: 5px;padding:10px">
+                        <div class="sidebar-widget sr-list-widget">
+                            <div class="widget-title">
+                                <h5>Kurumsal</h5>
+                            </div>
+                            <div class="list-nav">
+                                <ul>
+                                    @foreach($Pages as $item)
+                                        <li>
+                                            <a href="{{ route('corporatedetail',$item->slug) }}">
+                                                {{ $item->title }}
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-9">
+                    <div class="sr-details-content">
+                        <div class="title-txt">
+                            <h3>{{ $Detay->title }}</h3>
+                        </div>
+                        <div class="pera-text mt-20">
+                            {!! $Detay->desc !!}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="container home2-blog-area pt-50 pb-30" >
+        <div class="home2-fabrika-slider">
+            @for($i=1;$i <= 18;$i++)
+                <div class="blog-single-item">
+                    <div class="thumb-wrapper">
+                        <a href="{{ route('home') }}"><img src="/fabrika/fabrika{{ $i }}.jpg"  alt="{{ __('site.firma') }}"></a>
+                    </div>
+                </div>
+            @endfor
+        </div>
+    </section>
 @endsection
