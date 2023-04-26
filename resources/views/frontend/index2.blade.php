@@ -117,11 +117,11 @@
                         <div class="bixol-slider-wrapper">
                             <div class="bixol-slider-content">
                                 <div class="icon-wrapper">
-                                    <i class="flaticon flaticon-factory"></i>
+                                    <img src="/pratıktemilzik_ıkon.svg" style="width: 60px">
                                 </div>
-                                <div class="content-bottom">
-                                    <span>Kuruluş</span>
-                                    <h6>1999</h6>
+                                <div class="content-bottom" style="margin-top:-15px">
+                                    <span>Pratik</span>
+                                    <h6>Temizlik</h6>
                                 </div>
                             </div>
                             <div class="bixol-compare-slider">
