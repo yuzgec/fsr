@@ -78,7 +78,7 @@
                                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1" /></svg>
                                         İptal Et
                                     </a>
-                                    <form action="{{ route('page.destroy', $item->id) }}" method="POST">
+                                    <form action="{{ route('blog.destroy', $item->id) }}" method="POST">
                                         @csrf
                                         @method('DELETE')
                                         <button type="submit" class="btn btn-danger btn-sm ms-auto">
@@ -108,7 +108,7 @@
                     </h4>
                 </div>
                 <div>
-                    <a class="btn btn-tabler btn-sm" href="{{ route('blogcategory.index') }}" title="Sayfa Ekle">
+                    <a class="btn btn-tabler btn-sm" href="{{ route('blog-categories.index') }}" title="Sayfa Ekle">
                         <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                         Kategoriler
                     </a>
@@ -128,7 +128,7 @@
                     <tfoot>
                     <tr>
                         <th colspan="4">
-                            <a class="btn btn-success btn-block btn-sm" href="{{ route('blogcategory.create') }}" title="Yeni Kategori Ekle">
+                            <a class="btn btn-success btn-block btn-sm" href="{{ route('blog-categories.create') }}" title="Yeni Kategori Ekle">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"></path><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg>
                                 Yeni Ekle
                             </a>
@@ -144,7 +144,7 @@
                             </td>
                             <td>
                                 <div class="font-weight-medium">
-                                    <a href="{{ route('blogcategory.edit', $item->id) }}" title="Düzenle">{{ $item->title }}</a>
+                                    <a href="{{ route('blog-categories.edit', $item->id) }}" title="Düzenle">{{ $item->title }}</a>
                                 </div>
                             </td>
                             <td class="text-muted">
@@ -172,7 +172,7 @@
                                             <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1" /></svg>
                                             İptal Et
                                         </a>
-                                        <form action="{{ route('blogcategory.destroy', $item->id) }}" method="POST">
+                                        <form action="{{ route('blog-categories.destroy', $item->id) }}" method="POST">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="btn btn-danger btn-sm ms-auto">
