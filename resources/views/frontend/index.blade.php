@@ -514,7 +514,7 @@
                 @foreach($Blog as $item)
                     <div class="blog-single-item">
                         <div class="thumb-wrapper">
-                            <a href="{{ route('newdetail', $item->slug)}}"><img src="{{ (!$item->getFirstMediaUrl('page')) ? '/backend/resimyok.jpg': $item->getFirstMediaUrl('page')}}"  alt="{{ __('site.firma') }}"></a>
+                            <a href="{{ route('newdetail', $item->slug)}}"><img src="{{ (!$item->getFirstMediaUrl('page')) ? '/backend/resimyok.jpg': $item->getFirstMediaUrl('page', 'thumb')}}"  alt="{{ __('site.firma') }}"></a>
                         </div>
                         <div class="blog-content">
                             <div class="blog-meta">
