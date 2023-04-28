@@ -49,7 +49,7 @@
                     </div>
 
                     <div class="col-12 col-md-6">
-                        <div class="col-md-12 mb-3" style="border-bottom:1px dashed gray"></div>
+                        <div class="col-md-12 mb-3 mt-3" style="border-bottom:1px dashed gray"></div>
                         <h3>{{ $Detay->title }}</h3>
                         {!! $Detay->desc !!}
                         <div class="col-md-12 mt-3" style="border-bottom:1px dashed gray"></div>
