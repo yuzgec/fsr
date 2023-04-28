@@ -4,9 +4,12 @@
             <div class="row">
                 <div class="col-sm-2" style="align-items: flex-start">
                        <img src="/fsrkimya-beyaz-logo.svg" style="height: 25px">
+
                 </div>
                 <div class="col-sm-10">
                     <div class="bixol-info-social">
+                        <span class="text-white" style="margin-right:30px"><i class="flaticon flaticon-phone"></i> {{ config('settings.telefon1') }} </span>
+
                         <a href="#" class="text-white"><i class="fab fa-facebook"></i></a>
                         <a href="#" class="text-white"><i class="fab fa-twitter"></i></a>
                         <a href="#" class="text-white"><i class="fab fa-linkedin"></i></a>
@@ -32,16 +35,7 @@
                                   <img src="/fsr-logo.svg" style="width: 100px;margin-left:-50px" >
                               </a>
                             </div>
-                            <div class="bixol-header-item">
-                                <span class="bixol-icon-wrapper">
-                                    <i class="flaticon flaticon-phone"></i>
-                                </span>
-                                <div class="bixol-item-content">
-                                    <label>{{ __('site.telefon') }}:</label>
-                                    <span>{{ config('settings.telefon1') }} </span>
-                                </div>
-                                <a href="tel:{{ config('settings.telefon1') }} "></a>
-                            </div>
+
                            {{-- <div class="bixol-header-item">
                                 <span class="bixol-icon-wrapper">
                                     <i class="flaticon flaticon-phone"></i>

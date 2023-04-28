@@ -56,8 +56,8 @@
                         @if($Detay->sku )
                         <span>Ürün SKU : <b>{{ $Detay->sku }}</b></span><br>
                         @endif
-                        @if($Detay->option_1 )
-                        <span>Ürün Miktarı : <b>{{ $Detay->option_1 }}</b></span><br>
+                        @if($Detay->option1 )
+                        <span>Ürün Miktarı : <b>{{ $Detay->option1 }}</b></span><br>
                         @endif
                         <span>Ürün Kategori : </span><br>
                         {{--<span>Ürün Etiketleri :</span>--}}
