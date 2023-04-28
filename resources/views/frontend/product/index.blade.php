@@ -12,7 +12,7 @@
         </div>
     </div>
 
-    <section class="portfolio-area pb-50">
+    <section class="portfolio-area">
         <div class="pswp-gallery" id="gallery">
             <div class="container mt-50">
                 <div class="row">
@@ -77,7 +77,7 @@
         </div>
     </section>
 
-    <section class="h4-blog-area pt-30 pb-50">
+    <section class="h4-blog-area pb-20">
         <div class="container">
             <div class="h4-blogs">
                 <div class="row">
