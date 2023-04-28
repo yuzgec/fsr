@@ -42,7 +42,7 @@
                             <h3>{{ $Detay->title }}</h3>
                         </div>
                         <div class="pera-text mt-20">
-                            <img src="{{ (!$item->getFirstMediaUrl('page')) ? '/backend/resimyok.jpg': $item->getFirstMediaUrl('page')}}" class="img-fluid mb-2" alt="{{ $Detay->title }}" />
+                            <img src="{{ (!$Detay->getFirstMediaUrl('page')) ? '/backend/resimyok.jpg': $Detay->getFirstMediaUrl('page')}}" class="img-fluid mb-2" alt="{{ $Detay->title }}" />
                             {!! $Detay->desc !!}
                         </div>
                     </div>

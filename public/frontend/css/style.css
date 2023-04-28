@@ -370,8 +370,7 @@
         -ms-transform: translateY(-50%);
         transform: translateY(-50%);
         width: 1px;
-        height: 30px;
-        border: 1px dashed #c7d1ef; }
+        height: 30px;}
     .bixol-header .bixol-header-top .bixol-header-item {
       display: -webkit-box;
       display: -ms-flexbox;
