@@ -16,7 +16,7 @@
         <div class="pswp-gallery" id="gallery">
             <div class="container mt-50">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-12 col-md-6">
                         <div class="card" style="box-shadow: 3px 3px 3px #f4f4f4">
                             <div class="col-12">
                                 <div class="pswp-gallery__item">
@@ -48,15 +48,19 @@
                         </div>
                     </div>
 
-                    <div class="col-6">
+                    <div class="col-12 col-md-6">
                         <div class="col-md-12 mb-3" style="border-bottom:1px dashed gray"></div>
                         <h3>{{ $Detay->title }}</h3>
                         {!! $Detay->desc !!}
                         <div class="col-md-12 mt-3" style="border-bottom:1px dashed gray"></div>
+                        @if($Detay->sku )
                         <span>Ürün SKU : <b>{{ $Detay->sku }}</b></span><br>
+                        @endif
+                        @if($Detay->option_1 )
                         <span>Ürün Miktarı : <b>{{ $Detay->option_1 }}</b></span><br>
-                        <span>Ürün Kategori :</span><br>
-                        <span>Ürün Etiketleri :</span>
+                        @endif
+                        <span>Ürün Kategori : </span><br>
+                        {{--<span>Ürün Etiketleri :</span>--}}
                     </div>
 
                     <div class="col-12 mt-100">
