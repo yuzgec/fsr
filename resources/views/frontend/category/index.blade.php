@@ -21,7 +21,7 @@
                         <div class="h4-blog-column" style="border-radius: 20px">
                             <div class="thumb-wrapper" style="border-radius: 20px 20px 0 0 ">
                                 <a href="{{ route('productdetail', $item->slug) }}" title="{{ $item->title }}">
-                                    <img src="{{ (!$item->getFirstMediaUrl('page')) ? '/backend/resimyok.jpg': $item->getFirstMediaUrl('page')}}">
+                                    <img src="{{ (!$item->getFirstMediaUrl('page')) ? '/backend/resimyok.jpg': $item->getFirstMediaUrl('page', 'thumb')}}">
                                 </a>
                             </div>
                             <div class="blog-content text-center">

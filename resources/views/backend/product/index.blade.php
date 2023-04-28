@@ -22,74 +22,90 @@
                 </div>
             </div>
 
+            <ul class="nav nav-tabs nav-fill" data-bs-toggle="tabs">
+                @foreach($Kategori->where('parent_id', 0)  as $item)
+                <li class="nav-item">
+                    <a href="#{{ $item->slug }}" class="nav-link @if ($loop->first) active @endif " data-bs-toggle="tab">{{ $item->title }}</a>
+                </li>
+                @endforeach
+            </ul>
+
             <div class="table-responsive p-2">
                 <table class="table table-hover table-striped table-bordered table-center">
                     <thead>
-                        <tr>
-                            <th>Resim</th>
-                            <th>Başlık</th>
-                            <th>Durum</th>
-                            <th class="">Oluşturma Tarihi</th>
-                            <th class="w-1"></th>
-                        </tr>
+                    <tr>
+                        <th>Resim</th>
+                        <th>Başlık</th>
+                        <th>Durum</th>
+                        <th>Oluşturma Tarihi</th>
+                        <th class="w-1"></th>
+                    </tr>
                     </thead>
                     <tbody id="orders">
                     @foreach($All as $item)
-                    <tr id="page_{{$item->id}}">
-                        <td>
-                            <span class="avatar me-2" style="background-image: url({{ (!$item->getFirstMediaUrl('page')) ? '/backend/resimyok.jpg': $item->getFirstMediaUrl('page')}})"></span>
-                        </td>
-                        <td>
-                            <div class="font-weight-medium">
-                                <a href="{{ route('product.edit', $item->id) }}" title="Düzenle">{{ $item->title}}</a>
-                            </div>
-                        </td>
-                        <td>
-                            <label class="form-check form-check-single form-switch">
-                                <input class="form-check-input switch" status-id="{{ $item->id }}"  type="checkbox" @if ($item->status == 1) checked @endif>
-                            </label>
-                        </td>
+                        <tr id="page_{{$item->id}}">
+                            <td>
+                                <img src="{{ (!$item->getFirstMediaUrl('page')) ? '/backend/resimyok.jpg': $item->getFirstMediaUrl('page', 'icon')}}" class="avatar me-2"/>
+                            </td>
+                            <td>
+                                <div class="font-weight-medium">
+                                    <a href="{{ route('product.edit', $item->id) }}" title="Düzenle">{{ $item->title}}</a>
+                                </div>
+                            </td>
+                            <td>
+                                <label class="form-check form-check-single form-switch">
+                                    <input class="form-check-input switch" status-id="{{ $item->id }}"  type="checkbox" @if ($item->status == 1) checked @endif>
+                                </label>
+                            </td>
 
-                        <td>
-                            {{ $item->created_at->diffForHumans() }}
-                        </td>
-                        <td class="d-none d-lg-table-cell">
-                            <a data-bs-toggle="modal" data-bs-target="#silmeonayi{{ $item->id }}" class="text-right">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="4" y1="7" x2="20" y2="7" /><line x1="10" y1="11" x2="10" y2="17" /><line x1="14" y1="11" x2="14" y2="17" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
-                            </a>
-                        </td>
-                    </tr>
-                    <div class="modal modal-blur fade" id="silmeonayi{{ $item->id }}" tabindex="-1" role="dialog" aria-hidden="true">
-                        <div class="modal-dialog modal-sm" role="document">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title">Silme Onayı</h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body">
-                                    Silmek üzeresiniz. Bu işlem geri alınmamaktadır.
-                                </div>
-                                <div class="modal-footer">
-                                    <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">
-                                        <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1" /></svg>
-                                        İptal Et
-                                    </a>
-                                    <form action="{{ route('product.destroy', $item->id) }}" method="POST">
-                                        @csrf
-                                        @method('DELETE')
-                                        <button type="submit" class="btn btn-danger btn-sm ms-auto">
-                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="4" y1="7" x2="20" y2="7" /><line x1="10" y1="11" x2="10" y2="17" /><line x1="14" y1="11" x2="14" y2="17" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
-                                            Silmek İstiyorum
-                                        </button>
-                                    </form>
+                            <td>
+                                {{ $item->created_at->diffForHumans() }}
+                            </td>
+                            <td class="d-none d-lg-table-cell">
+                                <a data-bs-toggle="modal" data-bs-target="#silmeonayi{{ $item->id }}" class="text-right">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="4" y1="7" x2="20" y2="7" /><line x1="10" y1="11" x2="10" y2="17" /><line x1="14" y1="11" x2="14" y2="17" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
+                                </a>
+                            </td>
+                        </tr>
+                        <div class="modal modal-blur fade" id="silmeonayi{{ $item->id }}" tabindex="-1" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog modal-sm" role="document">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title">Silme Onayı</h5>
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        Silmek üzeresiniz. Bu işlem geri alınmamaktadır.
+                                    </div>
+                                    <div class="modal-footer">
+                                        <a href="#" class="btn btn-link link-secondary" data-bs-dismiss="modal">
+                                            <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 13l-4 -4l4 -4m-4 4h11a4 4 0 0 1 0 8h-1" /></svg>
+                                            İptal Et
+                                        </a>
+                                        <form action="{{ route('product.destroy', $item->id) }}" method="POST">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm ms-auto">
+                                                <svg xmlns="http://www.w3.org/2000/svg" class="icon" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><line x1="4" y1="7" x2="20" y2="7" /><line x1="10" y1="11" x2="10" y2="17" /><line x1="14" y1="11" x2="14" y2="17" /><path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" /><path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" /></svg>
+                                                Silmek İstiyorum
+                                            </button>
+                                        </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @endforeach
                     </tbody>
                 </table>
             </div>
+          {{--  <div class="tab-content">
+                @foreach($Kategori->where('parent_id', 0)  as $category)
+                <div class="tab-pane @if ($loop->first) show active @endif" id="{{ $category->slug }}">
+
+                </div>
+                @endforeach
+            </div>
+--}}
 
         </div>
     </div>

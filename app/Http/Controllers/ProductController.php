@@ -7,14 +7,14 @@ use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
 class ProductController extends Controller
 {
 
     public function index()
     {
-        $All = Product::all();
+        $All = Product::with('getCategory')->get();
+
         $Kategori = ProductCategory::get()->toFlatTree();
         return view('backend.product.index', compact('All', 'Kategori'));
     }
