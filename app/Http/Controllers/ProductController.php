@@ -13,7 +13,7 @@ class ProductController extends Controller
 
     public function index()
     {
-        $All = Product::with('getCategory')->get();
+        $All = Product::with('getCategory')->orderBy('id', 'desc')->get();
 
         $Kategori = ProductCategory::get()->toFlatTree();
         return view('backend.product.index', compact('All', 'Kategori'));
