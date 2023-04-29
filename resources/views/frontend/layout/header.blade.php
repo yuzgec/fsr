@@ -34,34 +34,34 @@
                               <a href="{{ route('home') }}">
                                   <img src="/fsr-logo.svg" style="width: 100px;margin-left:-50px" >
                               </a>
+
                             </div>
 
-                           {{-- <div class="bixol-header-item">
-                                <span class="bixol-icon-wrapper">
-                                    <i class="flaticon flaticon-phone"></i>
-                                </span>
-                                <div class="bixol-item-content">
-                                    <label>{{ __('site.telefon') }}:</label>
-                                    <span>{{ config('settings.telefon2') }} </span>
-                                </div>
-                            </div>--}}
+                            <div class="header-search" style="padding-top:20px;margin-left: 50px">
+                                <form action="#" >
+                                    <input type="text" class="form-control" placeholder="Arama">
+                                    <button type="submit"><i class="fas fa-search"></i></button>
+                                </form>
+                            </div>
+
+
                         </div>
                     </div>
                     <div class="col-lg-6" >
                         <div class="bixol-header-top-right">
                             <div class="bixol-header-item">
-                                        <span class="bixol-icon-wrapper">
-                                            <i class="flaticon flaticon-mail"></i>
-                                        </span>
+                                <span class="bixol-icon-wrapper">
+                                    <i class="flaticon flaticon-mail"></i>
+                                </span>
                                 <div class="bixol-item-content">
                                     <label>{{ __('site.email') }}</label>
                                     <span>{{ config('settings.email1') }}</span>
                                 </div>
                             </div>
                             <div class="bixol-header-item">
-                                        <span class="bixol-icon-wrapper">
-                                            <i class="flaticon flaticon-pin"></i>
-                                        </span>
+                                <span class="bixol-icon-wrapper">
+                                    <i class="flaticon flaticon-pin"></i>
+                                </span>
                                 <div class="bixol-item-content">
                                     <label>{{ config('settings.adres1') }}</label>
                                     <span>İZMİR</span>

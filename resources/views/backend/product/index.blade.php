@@ -31,11 +31,12 @@
             </ul>
 
             <div class="table-responsive p-2">
-                <table class="table table-hover table-striped table-bordered table-center">
+                <table class="table table-hover table-striped table-bordered ">
                     <thead>
                     <tr>
                         <th>Resim</th>
-                        <th>Başlık</th>
+                        <th>Ürün Adı</th>
+                        <th>SKU</th>
                         <th>Durum</th>
                         <th>Oluşturma Tarihi</th>
                         <th class="w-1"></th>
@@ -49,8 +50,11 @@
                             </td>
                             <td>
                                 <div class="font-weight-medium">
-                                    <a href="{{ route('product.edit', $item->id) }}" title="Düzenle">{{ $item->title}}</a>
+                                    <a href="{{ route('product.edit', $item->id) }}" title="{{ $item->title}}">{{ $item->title}}</a>
                                 </div>
+                            </td>
+                            <td>
+                                {{ $item->sku }}
                             </td>
                             <td>
                                 <label class="form-check form-check-single form-switch">
@@ -128,7 +132,7 @@
             </div>
 
             <div class="table-responsive p-2">
-                <table class="table table-hover table-striped table-bordered table-center">
+                <table class="table table-hover table-striped table-bordered">
                     <thead>
                         <tr>
                             <th>Resim</th>
@@ -152,11 +156,11 @@
                     @foreach($Kategori  as $item)
                         <tr>
                             <td>
-                                <span class="avatar me-2" style="background-image: url({{ (!$item->getFirstMediaUrl('page')) ? '/backend/resimyok.jpg': $item->getFirstMediaUrl('page')}})"></span>
+                                <img src="{{ (!$item->getFirstMediaUrl('page')) ? '/backend/resimyok.jpg': $item->getFirstMediaUrl('page', 'small')}}" class="avatar me-2"/>
                             </td>
                             <td>
                                 <div class="font-weight-medium">
-                                    <a href="{{ route('productcategory.edit', $item->id) }}" title="Düzenle">{{ $item->title }}</a>
+                                    <a href="{{ route('productcategory.edit', $item->id) }}" title="{{ $item->title }}">{{ $item->title }}</a>
                                 </div>
                             </td>
                             <td class="text-muted">

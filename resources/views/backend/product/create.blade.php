@@ -7,7 +7,7 @@
             {{Form::open(['route' => 'product.store', 'enctype' => 'multipart/form-data'])}}
 
                 <div class="card-header d-flex justify-content-between">
-                    <x-add title="Sayfa"></x-add>
+                    <x-add title="Ürün"></x-add>
                     <div>
                         <x-back></x-back>
                         <x-save></x-save>

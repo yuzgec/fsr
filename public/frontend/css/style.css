@@ -597,36 +597,36 @@
         @media (max-width: 1199.98px) {
           .header-style-2 .header-bottom .header-right .bixol-mobile-hamburger {
             display: inline-block; } }
-    .header-style-2 .header-bottom .header-search {
+     .header-search {
       text-align: right; }
-      .header-style-2 .header-bottom .header-search form {
-        max-width: 215px;
+       .header-search form {
+        max-width: 450px;
         position: relative;
         display: inline-block; }
-        .header-style-2 .header-bottom .header-search form input[type='text'] {
+         .header-search form input[type='text'] {
           width: 100%;
           padding: 3px 20px;
-          border: 1px solid #ffffff;
+          border: 1px solid #000E39;
           border-radius: 30px;
           background-color: transparent;
-          color: #ffffff; }
-          .header-style-2 .header-bottom .header-search form input[type='text']::-webkit-input-placeholder {
-            color: #ffffff;
+          color: #000E39; }
+           .header-search form input[type='text']::-webkit-input-placeholder {
+            color: #000E39;
             font-size: 14px; }
-          .header-style-2 .header-bottom .header-search form input[type='text']:-ms-input-placeholder {
-            color: #ffffff;
+           .header-search form input[type='text']:-ms-input-placeholder {
+               color: #000E39;
             font-size: 14px; }
-          .header-style-2 .header-bottom .header-search form input[type='text']::-ms-input-placeholder {
-            color: #ffffff;
+           .header-search form input[type='text']::-ms-input-placeholder {
+               color: #000E39;
             font-size: 14px; }
-          .header-style-2 .header-bottom .header-search form input[type='text']::placeholder {
-            color: #ffffff;
+           .header-search form input[type='text']::placeholder {
+               color: #000E39;
             font-size: 14px; }
-        .header-style-2 .header-bottom .header-search form button {
+         .header-search form button {
           position: absolute;
           right: 12px;
           background-color: transparent;
-          color: #ffffff;
+             color: #000E39;
           font-size: 14px;
           border: 0;
           top: 50%;
