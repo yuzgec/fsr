@@ -12,6 +12,12 @@ use Artesaos\SEOTools\Facades\SEOMeta;
 
 class HomeController extends Controller
 {
+
+    public function katalog(){
+
+        return redirect('/FSRGROUP-PRODUCT-CATALOGUE-2023.pdf');
+    }
+
     public function index(){
         SEOMeta::setTitle("FSR Kimya");
         SEOMeta::setDescription("FSR Kimya");

@@ -4,7 +4,9 @@ use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 
+
 Route::get('/', [HomeController::class, 'index'])->name('empty');
+Route::get('/katalog-tr', [HomeController::class, 'katalog'])->name('katalog');
 
 Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'localeSessionRedirect', 'localizationRedirect', 'localeViewPath' ]], function(){
     Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -18,10 +20,6 @@ Route::group(['prefix' => LaravelLocalization::setLocale(),'middleware' => [ 'lo
     Route::get(__('site.kategori_link').'/{url}', [HomeController::class, 'categorydetail'])->name('categorydetail');
     Route::get(__('site.urun_link').'/{url}', [HomeController::class, 'productdetail'])->name('productdetail');
     Route::get(__('site.haber_link').'/{url}', [HomeController::class, 'newdetail'])->name('newdetail');
-
-
-
-
     Route::get('/sss', [HomeController::class, 'sss'])->name('sss');
 });
 
@@ -45,7 +43,6 @@ Route::group(["prefix"=>"go", 'middleware' => ['auth','web', 'admin']],function(
     Route::auto('/video-categories', VideoCategoryController::class);
     Route::auto('/settings', SettingController::class);
     Route::auto('/contact', ContactController::class);
-    Route::auto('/features', FeaturesController::class);
     Route::auto('/reference', ReferenceController::class);
 });
 

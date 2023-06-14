@@ -58,15 +58,16 @@
                                     <span>{{ config('settings.email1') }}</span>
                                 </div>
                             </div>
+                            <a href="{{ route('katalog') }}">
                             <div class="bixol-header-item">
                                 <span class="bixol-icon-wrapper">
-                                    <i class="flaticon flaticon-pin"></i>
+                                   <i class="flaticon flaticon-pdf"></i>
                                 </span>
                                 <div class="bixol-item-content">
-                                    <label>{{ config('settings.adres1') }}</label>
-                                    <span>İZMİR</span>
+                                    <span>FSR 2023 <br>Ürün Kataloğu</span>
                                 </div>
                             </div>
+                            </a>
                         </div>
                     </div>
                 </div>
